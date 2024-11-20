@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
             PlayerControls = new PlayerInputs();
             PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector2>();
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = false;
+            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = i.ReadValue<bool>();
         }
 
         PlayerControls.Enable();
@@ -45,8 +45,7 @@ public class InputManager : MonoBehaviour
         cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
 
-
+        InteractPressed = false;
             
-
     }
 }

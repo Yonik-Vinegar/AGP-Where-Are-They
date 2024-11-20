@@ -4,18 +4,5 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    InputManager inputManager;
-    Rigidbody PlayerRigidbody;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
