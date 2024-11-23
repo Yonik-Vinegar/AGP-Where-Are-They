@@ -48,4 +48,6 @@ public class InputManager : MonoBehaviour
         InteractPressed = false;
             
     }
+
+    //void HandleInteraction
 }
