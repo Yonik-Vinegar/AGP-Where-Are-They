@@ -11,6 +11,8 @@ public class PuzzleFlow : MonoBehaviour
     public GameObject[] JunctionList;
     int currentPositionIndex;
     private bool MoveToNextPosition = true;
+    private bool CurrentEnergyPos;
+    private float speed = 0.5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,17 +22,19 @@ public class PuzzleFlow : MonoBehaviour
     void Update()
     {
 
-       if (MoveToNextPosition = True)
+       if (MoveToNextPosition = true)
        {
-            Vector3 CurrentEnergyPos = PositionList[currentPositionIndex].position;
+            transform.position = Vector3.MoveTowards(transform.position, PositionList[currentPositionIndex].transform.position, speed * Time.deltaTime);
+            
+            if (transform.position == PositionList[currentPositionIndex].transform.position)
+            {
+                currentPositionIndex++;
+            }
        }
 
 
-       if (GameObject.position = currentPositionIndex.position)
-       {
-            currentPositionIndex++;
-       }
-       if (PositionList[currentPositionIndex] = PositionList[2,4,]
+
+
     }
 
 

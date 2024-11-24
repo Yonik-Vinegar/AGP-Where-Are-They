@@ -1576,7 +1576,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &614469514
 Transform:
@@ -1609,15 +1609,17 @@ MonoBehaviour:
   - {fileID: 1304770339}
   - {fileID: 1765650890}
   - {fileID: 1599511775}
-  - {fileID: 1261743368}
-  - {fileID: 1301572081}
+  - {fileID: 1368576097}
+  - {fileID: 1580042787}
   - {fileID: 137173601}
   - {fileID: 1677116068}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2094701974}
+  - {fileID: 2020458672}
+  - {fileID: 1438335350}
+  - {fileID: 1261743368}
+  - {fileID: 1301572081}
+  PipeList: []
+  JunctionList: []
 --- !u!135 &614469516
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2876,7 +2878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1261743369}
   m_Layer: 0
-  m_Name: Position 8
+  m_Name: Position 11
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2907,7 +2909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301572082}
   m_Layer: 0
-  m_Name: Position 10
+  m_Name: Position 12
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3275,7 +3277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438335351}
   m_Layer: 0
-  m_Name: Position 9
+  m_Name: Position 10
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
