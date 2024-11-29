@@ -36,6 +36,7 @@ public class InputManager : MonoBehaviour
     public void HandleAllInputs()
     {
         HandleInputs();
+        HandleInteraction();
     }
     void HandleInputs()
     {
@@ -45,9 +46,20 @@ public class InputManager : MonoBehaviour
         cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
 
-        InteractPressed = false;
-            
-    }
 
-    //void HandleInteraction
+
+
+    }
+    
+   public void HandleInteraction()
+   {
+        if ( InteractPressed) //PlayerControls.MovementActions.Interact.performed += int => (encase it doesn't work as planned)
+        {
+            InteractPressed = true;
+        }
+        else
+        {
+            InteractPressed = false;
+        }
+   }
 }

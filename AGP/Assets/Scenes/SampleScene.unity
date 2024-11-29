@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 71482456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -685,8 +685,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019905137, y: 0.02, z: 0.0069625634}
-  m_Center: {x: 0.000047424866, y: -1.1559167e-14, z: 0.03754781}
+  m_Size: {x: 0.019905135, y: 0.019999983, z: 0.030635405}
+  m_Center: {x: 0.000047424848, y: -3.312975e-14, z: 0.02571148}
 --- !u!65 &376370168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -706,8 +706,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.008106606, y: 0.02, z: 0.020364111}
-  m_Center: {x: -0.038317326, y: -1.28344e-11, z: 0.00018204303}
+  m_Size: {x: 0.0533139, y: 0.019999983, z: 0.020364111}
+  m_Center: {x: -0.015713686, y: 1.2126565e-11, z: 0.00018204303}
 --- !u!1 &407027969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 421576570}
   - component: {fileID: 421576569}
   - component: {fileID: 421576572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1539,6 +1539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightAngleTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 970c3551df5b1814291a4f7b4b20f09d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970c3551df5b1814291a4f7b4b20f09d,
         type: 3}
@@ -1999,9 +2004,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 807349702}
-  m_Layer: 0
+  - component: {fileID: 807349704}
+  - component: {fileID: 807349703}
+  m_Layer: 3
   m_Name: Junction1
-  m_TagString: Junction
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2025,6 +2032,46 @@ Transform:
   - {fileID: 1580042788}
   m_Father: {fileID: 480293722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &807349703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807349701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2139526b2472dc438d3dbf87ef30d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &807349704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807349701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f3bfaf69f9b204886060101fac57f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Rotate
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 807349701}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,9 +2130,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 989216141}
-  m_Layer: 0
+  - component: {fileID: 989216143}
+  - component: {fileID: 989216142}
+  m_Layer: 3
   m_Name: Junction2
-  m_TagString: Junction
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2109,6 +2158,46 @@ Transform:
   - {fileID: 1301572082}
   m_Father: {fileID: 480293722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &989216142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989216140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2139526b2472dc438d3dbf87ef30d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &989216143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989216140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f3bfaf69f9b204886060101fac57f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Rotate
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 807349701}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &994321115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,7 +2317,7 @@ GameObject:
   - component: {fileID: 1011560971}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2877,7 +2966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261743369}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 11
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -2908,7 +2997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301572082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 12
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3140,7 +3229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1368576098}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 4
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3276,7 +3365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438335351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 10
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3644,8 +3733,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019905137, y: 0.02, z: 0.0069625634}
-  m_Center: {x: 0.000047424866, y: -1.1559167e-14, z: 0.03754781}
+  m_Size: {x: 0.019905142, y: 0.02, z: 0.049780827}
+  m_Center: {x: 0.000047421865, y: 0.0000000050807634, z: 0.016138684}
 --- !u!65 &1579818003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3665,8 +3754,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.008106606, y: 0.02, z: 0.020364111}
-  m_Center: {x: -0.038317326, y: -1.28344e-11, z: 0.00018204303}
+  m_Size: {x: 0.032046333, y: 0.02, z: 0.020364106}
+  m_Center: {x: -0.026347682, y: -7.403524e-10, z: 0.00018203861}
 --- !u!1 &1580042787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1580042788}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 5
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3707,7 +3796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1599511776}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Position 3
   m_TagString: EnergyMovePos
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3947,6 +4036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970c3551df5b1814291a4f7b4b20f09d,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 970c3551df5b1814291a4f7b4b20f09d,
+        type: 3}
       propertyPath: m_TagString
       value: Junction
       objectReference: {fileID: 0}
@@ -4035,7 +4129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091965007}
   - component: {fileID: 2091965008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
