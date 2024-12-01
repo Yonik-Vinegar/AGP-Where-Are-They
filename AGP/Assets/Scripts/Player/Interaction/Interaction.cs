@@ -7,14 +7,20 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private LayerMask InteractionLayerMask;
     //[SerializeField] private Transform objectGrabPointTransform;
+    InputManager inputManager;
+    private Interactable Interactable;
 
-    private  Interactable interactionAvailable;
+    public void Awake()
+    {
+        inputManager = GetComponent<InputManager>();
+
+    }
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (inputManager.InteractPressed)
         {
-            if (interactionAvailable == null)
+            if (Interactable == null)
             {
                 //not carrying an object, try to grab
 
@@ -22,16 +28,17 @@ public class Interaction : MonoBehaviour
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, InteractionLayerMask))
                 {
                     Debug.Log(raycastHit.transform);
-                    if (raycastHit.transform.TryGetComponent(out interactionAvailable))
+                    Debug.Log("DetectingInteractionavailbility");
+                    if (raycastHit.transform.TryGetComponent(out Interactable))
                     {
                         //ObjectGrabbable.Grab(objectGrabPointTransform);
-                        Debug.Log(InteractionAvailable);
+                        Debug.Log("InteractionAvailable");
                     }
                 }
             }
             else
             {
-                interactionAvailable = null;
+                Interactable = null;
             }
         }
     }

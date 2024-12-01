@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
             PlayerControls = new PlayerInputs();
             PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector2>();
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = i.ReadValue<bool>();
+            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = true;
         }
 
         PlayerControls.Enable();
@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
     public void HandleAllInputs()
     {
         HandleInputs();
-        HandleInteraction();
+
     }
     void HandleInputs()
     {
@@ -51,15 +51,5 @@ public class InputManager : MonoBehaviour
 
     }
     
-   public void HandleInteraction()
-   {
-        if ( InteractPressed) //PlayerControls.MovementActions.Interact.performed += int => (encase it doesn't work as planned)
-        {
-            InteractPressed = true;
-        }
-        else
-        {
-            InteractPressed = false;
-        }
-   }
+
 }
