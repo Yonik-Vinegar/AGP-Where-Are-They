@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["^Mission Assignment: discover and restart communication with station 0823.","\n","^Mission Assigned to: Jeremy Briggs.","\n","^Mission Suit: 0-99-0","\n",{"->":"BeginingTalking"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"BeginingTalking":["^Jeremy: So what","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (inputManager.InteractPressed)
+        if (inputManager.InteractionPerformed == true)
         {
             if (Interactable == null)
             {
@@ -27,11 +27,10 @@ public class Interaction : MonoBehaviour
                 float pickUpDistance = 2f;
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, InteractionLayerMask))
                 {
-                    Debug.Log(raycastHit.transform);
+
                     Debug.Log("DetectingInteractionavailbility");
                     if (raycastHit.transform.TryGetComponent(out Interactable))
                     {
-                        //ObjectGrabbable.Grab(objectGrabPointTransform);
                         Debug.Log("InteractionAvailable");
                     }
                 }

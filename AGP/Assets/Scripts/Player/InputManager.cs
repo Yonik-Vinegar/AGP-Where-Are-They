@@ -9,12 +9,14 @@ public class InputManager : MonoBehaviour
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
-    public bool InteractPressed;
+    private bool InteractPressed = false;
+    public bool InteractionPerformed;
 
     public float verticalInput;
     public float horizontalInput;
     public float cameraInputY;
     public float cameraInputX;
+
 
     private void OnEnable()
     {
@@ -23,7 +25,7 @@ public class InputManager : MonoBehaviour
             PlayerControls = new PlayerInputs();
             PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector2>();
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = true;
+            PlayerControls.MovementActions.Interact.performed += i => InteractPressed = true; 
         }
 
         PlayerControls.Enable();
@@ -47,9 +49,20 @@ public class InputManager : MonoBehaviour
         cameraInputX = cameraInput.x;
 
 
-
-
     }
-    
+
+    public void Update()
+    {
+        if (InteractPressed == true)
+        {
+            InteractionPerformed = true;
+            InteractPressed = false;
+        }
+        else
+        {
+            InteractionPerformed = false;
+        }
+    }
+
 
 }
