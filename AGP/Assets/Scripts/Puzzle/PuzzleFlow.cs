@@ -14,15 +14,12 @@ public class PuzzleFlow : MonoBehaviour
     private bool CurrentEnergyPos;
     private float speed = 0.5f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
+
     // Update is called once per frame
     void Update()
     {
 
-       if (MoveToNextPosition = true)
+       if (MoveToNextPosition == true)
        {
             transform.position = Vector3.MoveTowards(transform.position, PositionList[currentPositionIndex].transform.position, speed * Time.deltaTime);
             
@@ -32,7 +29,10 @@ public class PuzzleFlow : MonoBehaviour
             }
        }
 
-
+       if (currentPositionIndex >= PositionList.Length)
+       {
+            MoveToNextPosition = false;
+       }
 
 
     }

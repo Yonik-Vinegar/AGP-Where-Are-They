@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [Header("VisualCue")]
-    [SerializeField] private GameObject visualCue;
+    Interaction interaction;
 
-    
+    [Header("Ink Json")]
+    [SerializeField] private TextAsset inkJSON;
+    public GameObject Player;
+    //public GameObject DialogueManager
 
     private void Awake()
     {
-        visualCue.SetActive(false);
+        Player = GameObject.Find("PlayerManager/Player");
+        interaction = Player.GetComponent<Interaction>();
     }
+
+    private void Update()
+    {
+        if (interaction.InteractionTriggered == true) 
+        {
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            Debug.Log("DialogueTriggered");
+        }
+    }
+
 }

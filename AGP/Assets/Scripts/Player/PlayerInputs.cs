@@ -145,6 +145,65 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""InteractionActionMap"",
+            ""id"": ""a95ce8b9-8fec-4792-b7b3-f03a76408487"",
+            ""actions"": [
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""22cdb5e8-d3f2-4c0d-ade0-e8a9dde30a3a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb68e9fc-5389-4361-8f1a-1e4a26d2c0e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8eb20e93-52ce-4ee7-b829-c0bd06195c41"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a12fadd-1371-4158-904e-78fb7181d0d9"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17f377b8-d3bd-412a-b203-89c1da93bd8d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -154,6 +213,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_MovementActions_MovementInputs = m_MovementActions.FindAction("MovementInputs", throwIfNotFound: true);
         m_MovementActions_Camera = m_MovementActions.FindAction("Camera", throwIfNotFound: true);
         m_MovementActions_Interact = m_MovementActions.FindAction("Interact", throwIfNotFound: true);
+        // InteractionActionMap
+        m_InteractionActionMap = asset.FindActionMap("InteractionActionMap", throwIfNotFound: true);
+        m_InteractionActionMap_Continue = m_InteractionActionMap.FindAction("Continue", throwIfNotFound: true);
+        m_InteractionActionMap_Interact = m_InteractionActionMap.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,10 +336,69 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public MovementActionsActions @MovementActions => new MovementActionsActions(this);
+
+    // InteractionActionMap
+    private readonly InputActionMap m_InteractionActionMap;
+    private List<IInteractionActionMapActions> m_InteractionActionMapActionsCallbackInterfaces = new List<IInteractionActionMapActions>();
+    private readonly InputAction m_InteractionActionMap_Continue;
+    private readonly InputAction m_InteractionActionMap_Interact;
+    public struct InteractionActionMapActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public InteractionActionMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Continue => m_Wrapper.m_InteractionActionMap_Continue;
+        public InputAction @Interact => m_Wrapper.m_InteractionActionMap_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_InteractionActionMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InteractionActionMapActions set) { return set.Get(); }
+        public void AddCallbacks(IInteractionActionMapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InteractionActionMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InteractionActionMapActionsCallbackInterfaces.Add(instance);
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        private void UnregisterCallbacks(IInteractionActionMapActions instance)
+        {
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        public void RemoveCallbacks(IInteractionActionMapActions instance)
+        {
+            if (m_Wrapper.m_InteractionActionMapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInteractionActionMapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InteractionActionMapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InteractionActionMapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InteractionActionMapActions @InteractionActionMap => new InteractionActionMapActions(this);
     public interface IMovementActionsActions
     {
         void OnMovementInputs(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IInteractionActionMapActions
+    {
+        void OnContinue(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }
 }

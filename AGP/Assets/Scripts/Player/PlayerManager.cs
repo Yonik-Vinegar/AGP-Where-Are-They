@@ -8,11 +8,15 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     PlayerLocomation playerLocomation;
     CameraManager cameraManager;
+    DialogueManager dialogueManager;
+    public GameObject DialogueManager;
     // Start is called before the first frame update
     private void Awake()
     {
+        
         inputManager = GetComponent<InputManager>();
         playerLocomation = GetComponent<PlayerLocomation>();
+        dialogueManager = DialogueManager.GetComponent<DialogueManager>();
 
     }
 
@@ -23,7 +27,15 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerLocomation.HandleAllMovement();
+        if (dialogueManager.dialogueIsPlaying == true)
+        {
+            return;
+        }
+        else
+        {
+            playerLocomation.HandleAllMovement();
+        }
+        
     }
 
 

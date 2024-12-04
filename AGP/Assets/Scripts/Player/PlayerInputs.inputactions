@@ -123,6 +123,65 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "InteractionActionMap",
+            "id": "a95ce8b9-8fec-4792-b7b3-f03a76408487",
+            "actions": [
+                {
+                    "name": "Continue",
+                    "type": "Button",
+                    "id": "22cdb5e8-d3f2-4c0d-ade0-e8a9dde30a3a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "cb68e9fc-5389-4361-8f1a-1e4a26d2c0e0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8eb20e93-52ce-4ee7-b829-c0bd06195c41",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a12fadd-1371-4158-904e-78fb7181d0d9",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17f377b8-d3bd-412a-b203-89c1da93bd8d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
