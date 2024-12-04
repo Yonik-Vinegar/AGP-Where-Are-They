@@ -1,4 +1,6 @@
 This is example dialogue.
+More exampling
+I really am that good
     *really?
     yes really
     ->Test2
