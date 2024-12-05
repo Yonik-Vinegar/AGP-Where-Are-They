@@ -6,11 +6,10 @@ public class Interaction : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private LayerMask InteractionLayerMask;
-    //[SerializeField] private Transform objectGrabPointTransform;
     InputManager inputManager;
     private Interactable Interactable;
     public bool InteractionTriggered;
-    public bool ContinueTriggered = false;
+    public bool ContinueTriggered;
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -26,24 +25,28 @@ public class Interaction : MonoBehaviour
         if (Interactable == null)
         {
              float Distance = 5f;
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, Distance, InteractionLayerMask) && !DialogueManager.GetInstance().dialogueIsPlaying)
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, Distance, InteractionLayerMask))
             {
                 visualCue.SetActive(true);
                 if (inputManager.InteractionPerformed == true)
                 {
+                    Debug.Log("Is InteractionTriggered being set to true");
                     InteractionTriggered = true;
                 }
                 else
                 {
+
                     InteractionTriggered = false;
                 }
 
-                if (inputManager.ContinuePressed == true)
+                if (inputManager.ContinuePerformed == true)
                 {
+                    Debug.Log("Is ContinueTriggered being called more than once");
                     ContinueTriggered = true;
                 }
                 else
                 {
+
                     ContinueTriggered = false;
                 }
             }

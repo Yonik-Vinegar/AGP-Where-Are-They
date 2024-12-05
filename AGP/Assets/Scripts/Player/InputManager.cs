@@ -11,8 +11,8 @@ public class InputManager : MonoBehaviour
     public Vector2 cameraInput;
     private bool InteractPressed = false;
     public bool InteractionPerformed;
-    private bool ContinuePerformed = false;
-    public bool ContinuePressed;
+    public bool ContinuePerformed;
+    private bool ContinuePressed = false;
 
     public float verticalInput;
     public float horizontalInput;
@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour
             PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector2>();
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerControls.InteractionActionMap.Interact.performed += i => InteractPressed = true;
-            PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePerformed = true;
+            PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePressed = true;
         }
 
         PlayerControls.Enable();
@@ -66,14 +66,15 @@ public class InputManager : MonoBehaviour
             InteractionPerformed = false;
         }
 
-        if (ContinuePerformed == true)
+        if (ContinuePressed == true)
         {
-            ContinuePressed = true;
-            ContinuePerformed = false;
+            Debug.Log("Registering space");
+            ContinuePerformed = true;
+            ContinuePressed = false;
         }
         else
         {
-            ContinuePressed = false;
+            ContinuePerformed = false;
         }
     }
 

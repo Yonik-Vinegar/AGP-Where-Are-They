@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TMP_Text dialogueText;
 
     private Story currentStory;
 
@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Retrieving Input From")]
     public GameObject Player;
     Interaction interaction;
+    InputManager inputManager;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
         Player = GameObject.Find("PlayerManager/Player");
         interaction = Player.GetComponent<Interaction>();
+        inputManager = Player.GetComponent<InputManager>();
     }
 
     public static DialogueManager GetInstance()
@@ -48,18 +50,20 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (interaction.ContinueTriggered == true)
+        if (inputManager.ContinuePerformed == true)
         {
+            Debug.Log("Trying to continue story");
             ContinueStory();
         }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        currentStory =  new Story (inkJSON.text);
+        currentStory =  new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         ContinueStory();
+
 
     }
 
@@ -72,11 +76,11 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        Debug.Log("It is calling the continue function");
+
         if (currentStory.canContinue)
         {
+            Debug.Log("ContinueStory");
             dialogueText.text = currentStory.Continue();
-            Debug.Log("It is trying to continue the story");
         }
         else
         {
