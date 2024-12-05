@@ -1366,7 +1366,6 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   cameraInput: {x: 0, y: 0}
   InteractionPerformed: 0
-  ContinuePressed: 0
   verticalInput: 0
   horizontalInput: 0
   cameraInputY: 0
@@ -1397,7 +1396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e2d45ddcd1e7f438921bda0ec1ecf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 919123727}
 --- !u!54 &421576572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1442,7 +1440,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   InteractionTriggered: 0
-  ContinueTriggered: 0
   visualCue: {fileID: 458255378}
 --- !u!1 &458255378
 GameObject:
