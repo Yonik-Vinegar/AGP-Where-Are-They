@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 
     PlayerInputs PlayerControls;
 
+    //Standard player variables
     public Vector2 movementInput;
     public Vector2 cameraInput;
     private bool InteractPressed = false;
@@ -14,11 +15,15 @@ public class InputManager : MonoBehaviour
     public bool ContinuePerformed;
     private bool ContinuePressed = false;
 
+    //Camera Variables
     public float verticalInput;
     public float horizontalInput;
     public float cameraInputY;
     public float cameraInputX;
 
+    //UI variables
+    public Vector2 UIMovementInput;
+    public bool UISubmitPressed = false;
 
     private void OnEnable()
     {
@@ -29,6 +34,8 @@ public class InputManager : MonoBehaviour
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerControls.InteractionActionMap.Interact.performed += i => InteractPressed = true;
             PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePressed = true;
+            PlayerControls.UIActionMap.Move.performed += i => UIMovementInput = i.ReadValue<Vector2>();
+            PlayerControls.UIActionMap.Submit.performed += i => UISubmitPressed = true;
         }
 
         PlayerControls.Enable();
@@ -76,6 +83,7 @@ public class InputManager : MonoBehaviour
         {
             ContinuePerformed = false;
         }
+
     }
 
 
