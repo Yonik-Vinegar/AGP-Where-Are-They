@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        
+
         inputManager = GetComponent<InputManager>();
         playerLocomation = GetComponent<PlayerLocomation>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
         {
             playerLocomation.HandleAllMovement();
         }
-        
+
     }
 
 
