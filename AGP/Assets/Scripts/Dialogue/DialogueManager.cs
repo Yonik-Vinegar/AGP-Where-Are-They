@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (interaction.ContinueTriggered == true)
+        if (interaction.ContinueDialogueTriggered == true)
         {
             ContinueStory();
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -9,11 +10,16 @@ public class Interaction : MonoBehaviour
     //[SerializeField] private Transform objectGrabPointTransform;
     InputManager inputManager;
     private Interactable Interactable;
-    public bool InteractionTriggered;
-    public bool ContinueTriggered = false;
+    public bool DialogueInteractionTriggered;
+    public bool PuzzleInteractionTriggered;
+    public bool ContinueDialogueTriggered;
+
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
+
+    [Header("Deciding which interaction to follow")]
+    [SerializeField] private GameObject[] junction;
 
     public void Awake()
     {
@@ -23,29 +29,26 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Interactable == null)
+        if (Interactable == null) // do it via pressed then in the actual compare tags of raycast set to triggerd
         {
+            RaycastHit hit;
              float Distance = 5f;
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, Distance, InteractionLayerMask) && !DialogueManager.GetInstance().dialogueIsPlaying)
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, Distance, InteractionLayerMask))
             {
                 visualCue.SetActive(true);
-                if (inputManager.InteractionPerformed == true)
+                if (hit.transform.CompareTag("Robot"))
                 {
-                    InteractionTriggered = true;
-                }
-                else
-                {
-                    InteractionTriggered = false;
+                    Debug.Log("picking up the robot");
+                    DialogueInteraction();
                 }
 
-                if (inputManager.ContinuePressed == true)
+                if (hit.transform.CompareTag("Junction"))
                 {
-                    ContinueTriggered = true;
+                    Debug.Log("picking up the junctions");
+                    PuzzleInteraction();
                 }
-                else
-                {
-                    ContinueTriggered = false;
-                }
+
+               
             }
             else
             {
@@ -60,4 +63,30 @@ public class Interaction : MonoBehaviour
 
         
     }
+
+    private void DialogueInteraction()
+    {
+        if (inputManager.InteractionPerformed == true)
+        {
+            DialogueInteractionTriggered = true;
+        }
+        else { DialogueInteractionTriggered= false; }
+
+        if (inputManager.ContinuePressed == true)
+        {
+            ContinueDialogueTriggered = true;
+        }
+        else {  ContinueDialogueTriggered= false; }
+    }
+
+    private void PuzzleInteraction()
+    {
+        if (inputManager.InteractionPerformed == true)
+        {
+            PuzzleInteractionTriggered= true;
+        }
+        else { PuzzleInteractionTriggered= false; }
+    }
+  
+
 }

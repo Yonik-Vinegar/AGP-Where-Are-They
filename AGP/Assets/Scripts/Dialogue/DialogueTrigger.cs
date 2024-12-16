@@ -19,11 +19,15 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (interaction.InteractionTriggered == true) 
+        if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-            Debug.Log("DialogueTriggered");
+            if (interaction.DialogueInteractionTriggered == true)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                Debug.Log("DialogueTriggered");
+            }
         }
+
     }
 
 }

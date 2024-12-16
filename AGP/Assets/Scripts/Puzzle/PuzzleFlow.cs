@@ -8,7 +8,6 @@ public class PuzzleFlow : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] PositionList;
     public GameObject[] PipeList;
-    public GameObject[] JunctionList;
     int currentPositionIndex;
     private bool MoveToNextPosition = true;
     private bool CurrentEnergyPos;
