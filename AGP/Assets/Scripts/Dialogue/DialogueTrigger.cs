@@ -19,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!DialogueManager.GetInstance().dialogueIsPlaying)   
         {
             if (interaction.DialogueInteractionTriggered == true)
             {

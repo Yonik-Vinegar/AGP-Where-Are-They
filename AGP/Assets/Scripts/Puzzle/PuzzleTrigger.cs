@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class PuzzleTrigger : MonoBehaviour
 {
-    [SerializeField] bool outTrigger;
-    [SerializeField] Junction connectedJunction;
 
+    [SerializeField] Junction connectedJunction;
+    public GameObject AssignedJunction;
+
+    private void Awake()
+    {
+
+        connectedJunction = AssignedJunction.GetComponent<Junction>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pipe"))
         {
-            if (outTrigger)
-            {
-                connectedJunction.outputCollider = true;
-            }
-            else
-            {
-                connectedJunction.inputCollider = true;
-            }
+            connectedJunction.outputCollider = true;
+            connectedJunction.inputCollider = true;
+
         }
     }
 
@@ -27,14 +28,9 @@ public class PuzzleTrigger : MonoBehaviour
     {
         if (other.CompareTag("Pipe"))
         {
-            if (outTrigger)
-            {
-                connectedJunction.outputCollider = false;
-            }
-            else
-            {
-                connectedJunction.inputCollider = false;
-            }
+            connectedJunction.outputCollider = false;
+            connectedJunction.inputCollider = false;
+
         }
     }
 

@@ -14,8 +14,10 @@ public class Junction : MonoBehaviour
     public bool inputCollider;
     public bool outputCollider;
 
+
     [Header("Checking if energy can move")]
     public bool EnergyCanMove;
+    public float JunctionsAligned;
 
     [Header("other scripts")]
     public GameObject Player;
@@ -31,7 +33,7 @@ public class Junction : MonoBehaviour
         CheckForRotation();
         CheckIfAligned();
 
-        if (interaction.PuzzleInteractionTriggered == true && EnergyCanMove == true)
+        if (interaction.PuzzleInteractionTriggered == true)
         {
             RotateJunction();
         }
@@ -52,11 +54,12 @@ public class Junction : MonoBehaviour
 
     public void CheckIfAligned()
     {
-        if (inputCollider&&outputCollider)
+        if (inputCollider && outputCollider)
         {
             Debug.Log("lasering");
             //continue laser
             EnergyCanMove = true;
+            JunctionsAligned += 1;
         }
         else
         {
@@ -72,4 +75,7 @@ public class Junction : MonoBehaviour
         newRotation = transform.rotation.eulerAngles;
         newRotation.z += 90;
     }
+
+
+    
 }

@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5495048838463673636}
   - component: {fileID: 4077297920295976728}
-  - component: {fileID: 3016344178145337827}
   - component: {fileID: 98062557261022064}
   - component: {fileID: 7138011744356593898}
   - component: {fileID: 4239523286480342814}
   m_Layer: 3
   m_Name: JunctionPrefab
-  m_TagString: Interactable
+  m_TagString: Junction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,24 +51,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnTime: 1
+  InputCollider: {fileID: 8384234900874928723}
+  OutputCollider: {fileID: 5687863013684119023}
   inputCollider: 0
   outputCollider: 0
   EnergyCanMove: 0
+  JunctionsAligned: 0
   Player: {fileID: 0}
---- !u!114 &3016344178145337827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3240513982217928403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7756e549b630a45a041ea718caeed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outTrigger: 0
-  connectedJunction: {fileID: 4077297920295976728}
 --- !u!54 &98062557261022064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86,15 +74,15 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 50
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
   m_Constraints: 62
   m_CollisionDetection: 0
 --- !u!65 &7138011744356593898
@@ -107,17 +95,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 51
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.428595, y: 0.53883505, z: 0.3532734}
-  m_Center: {x: 0.4224007, y: -0.0019165277, z: -0.1461649}
+  m_Size: {x: 1.1264834, y: 0.53883505, z: 0.3532734}
+  m_Center: {x: 0.27134496, y: -0.0019165277, z: -0.1461649}
 --- !u!65 &4239523286480342814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,17 +116,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 51
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5268151, y: 1.3668811, z: 1}
-  m_Center: {x: 0.009964734, y: 0.4849411, z: 0}
+  m_Size: {x: 0.5268151, y: 0.8586088, z: 1}
+  m_Center: {x: 0.009964734, y: 0.23080474, z: 0}
 --- !u!1 &5687863013684119023
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7756e549b630a45a041ea718caeed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outTrigger: 1
+  outTrigger: 0
   connectedJunction: {fileID: 4077297920295976728}
+  AssignedJunction: {fileID: 3240513982217928403}
 --- !u!54 &665998760557721046
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,7 +222,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 62
   m_CollisionDetection: 0
 --- !u!1 &8384234900874928723
 GameObject:
@@ -288,8 +277,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.6067064, z: 1}
+  m_Center: {x: 0, y: 0.05335319, z: 0}
 --- !u!114 &5972473470240010999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outTrigger: 0
   connectedJunction: {fileID: 4077297920295976728}
+  AssignedJunction: {fileID: 3240513982217928403}
 --- !u!54 &9087706481759098438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -329,7 +319,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 62
   m_CollisionDetection: 0
 --- !u!1001 &3610491431808461440
 PrefabInstance:
