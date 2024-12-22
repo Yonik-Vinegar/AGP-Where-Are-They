@@ -9,6 +9,8 @@ public class Junction : MonoBehaviour
     [SerializeField] float turnTime = 1;
     bool triggerRotation;
     Vector3 newRotation;
+    private bool IsTurning;
+
 
     [Header("Collider Variables")]
     public bool inputCollider;
@@ -27,6 +29,7 @@ public class Junction : MonoBehaviour
     {
         Player = GameObject.Find("PlayerManager/Player");
         interaction = Player.GetComponent<Interaction>();
+
     }
     private void Update()
     {
@@ -35,7 +38,12 @@ public class Junction : MonoBehaviour
 
         if (interaction.PuzzleInteractionTriggered == true)
         {
-            RotateJunction();
+            //check if it is rotating, then check if it is one of the possible positions.
+            triggerRotation = true;
+            if (IsTurning == false)
+            {
+                RotateJunction();
+            }
         }
     }
 
@@ -48,7 +56,9 @@ public class Junction : MonoBehaviour
             if (transform.rotation.eulerAngles == newRotation)
             {
                 triggerRotation = false;
+                IsTurning = false;
             }
+            
         }
     }
 
@@ -59,7 +69,7 @@ public class Junction : MonoBehaviour
             Debug.Log("lasering");
             //continue laser
             EnergyCanMove = true;
-            JunctionsAligned += 1;
+            //JunctionsAligned += 1;
         }
         else
         {
@@ -71,11 +81,14 @@ public class Junction : MonoBehaviour
 
     public void RotateJunction()
     {
-        triggerRotation = true;
+        triggerRotation= true;
         newRotation = transform.rotation.eulerAngles;
         newRotation.z += 90;
+        if (triggerRotation == true)
+        {
+            IsTurning = true;
+        }
+
     }
-
-
     
 }

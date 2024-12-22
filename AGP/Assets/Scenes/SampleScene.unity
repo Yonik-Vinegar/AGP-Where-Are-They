@@ -822,7 +822,7 @@ PrefabInstance:
     - target: {fileID: 98062557261022064, guid: 817c4a846dd2f7e4b876fc94d66f6770,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 98062557261022064, guid: 817c4a846dd2f7e4b876fc94d66f6770,
         type: 3}
@@ -4704,6 +4704,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 480293722}
     m_Modifications:
+    - target: {fileID: 98062557261022064, guid: 817c4a846dd2f7e4b876fc94d66f6770,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3240513982217928403, guid: 817c4a846dd2f7e4b876fc94d66f6770,
         type: 3}
       propertyPath: m_Name
@@ -4714,6 +4719,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 421576564}
+    - target: {fileID: 4077297920295976728, guid: 817c4a846dd2f7e4b876fc94d66f6770,
+        type: 3}
+      propertyPath: turnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5495048838463673636, guid: 817c4a846dd2f7e4b876fc94d66f6770,
         type: 3}
       propertyPath: m_LocalPosition.x
