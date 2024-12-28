@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class InputManager : MonoBehaviour
 
     PlayerInputs PlayerControls;
 
+    public bool lockCursor = true;
     public Vector2 movementInput;
     public Vector2 cameraInput;
     private bool InteractPressed = false;
@@ -19,6 +21,20 @@ public class InputManager : MonoBehaviour
     public float cameraInputY;
     public float cameraInputX;
 
+
+    private void Start()
+    {
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
 
     private void OnEnable()
     {

@@ -37,19 +37,23 @@ public class Interaction : MonoBehaviour
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, Distance, InteractionLayerMask))
             {
                 visualCue.SetActive(true);
+                
                 if (hit.transform.CompareTag("Robot"))
                 {
                     Debug.Log("picking up the robot");
                     DialogueInteraction();
                 }
 
-                if (hit.transform.CompareTag("Junction"))
+                if (inputManager.InteractionPerformed)
                 {
-                    Debug.Log("picking up the junctions");
-                    PuzzleInteraction();
+                    if (hit.collider.TryGetComponent(out Junction junction))
+                    {
+                        Debug.Log("picking up the junctions");
+                        junction.Interact();
+                    }
                 }
 
-               
+
             }
             else
             {
@@ -88,14 +92,15 @@ public class Interaction : MonoBehaviour
         else {  ContinueDialogueTriggered= false; }
     }
 
-    private void PuzzleInteraction()
-    {
-        if (inputManager.InteractionPerformed == true)
-        {
-            PuzzleInteractionTriggered= true;
-        }
-        else { PuzzleInteractionTriggered= false; }
-    }
+    // private void PuzzleInteraction()
+    // {
+    //     if (inputManager.InteractionPerformed == true)
+    //     {
+    //         Debug.Log("puzzle interaction");
+    //         PuzzleInteractionTriggered= true;
+    //     }
+    //     else { PuzzleInteractionTriggered= false; }
+    // }
   
     
 }
