@@ -9,6 +9,7 @@ TagManager:
   - Junction
   - Robot
   - Pipe
+  - GroundTrigger
   layers:
   - Default
   - TransparentFX

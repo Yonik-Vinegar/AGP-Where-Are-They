@@ -14,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         Player = GameObject.Find("PlayerManager/Player");
-        interaction = Player.GetComponent<Interaction>();
+        interaction = Player.GetComponent<Interaction>();   
     }
 
     private void Update()

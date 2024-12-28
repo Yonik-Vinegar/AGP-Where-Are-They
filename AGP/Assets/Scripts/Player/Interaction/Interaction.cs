@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour
     public bool DialogueInteractionTriggered;
     public bool PuzzleInteractionTriggered;
     public bool ContinueDialogueTriggered;
+    public bool GroundContinueDialogue;
 
 
     [Header("Visual Cue")]
@@ -61,7 +62,14 @@ public class Interaction : MonoBehaviour
             Interactable = null;
         }
 
-        
+        if (inputManager.ContinuePressed == true)
+        {
+            GroundContinueDialogue = true;
+            Debug.Log("is this continously saying yes");
+
+        }
+        else { GroundContinueDialogue = false; }
+
     }
 
     private void DialogueInteraction()
@@ -75,6 +83,7 @@ public class Interaction : MonoBehaviour
         if (inputManager.ContinuePressed == true)
         {
             ContinueDialogueTriggered = true;
+            
         }
         else {  ContinueDialogueTriggered= false; }
     }
@@ -88,5 +97,5 @@ public class Interaction : MonoBehaviour
         else { PuzzleInteractionTriggered= false; }
     }
   
-
+    
 }

@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (interaction.ContinueDialogueTriggered == true)
+        if (interaction.ContinueDialogueTriggered == true || interaction.GroundContinueDialogue)
         {
             ContinueStory();
         }
@@ -72,16 +72,16 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        Debug.Log("It is calling the continue function");
+
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-            Debug.Log("It is trying to continue the story");
+
         }
         else
         {
             ExitDialogueMode();
-            Debug.Log("Has finished story");
+
         }
     }
 }
