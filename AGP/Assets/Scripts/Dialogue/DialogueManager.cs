@@ -11,6 +11,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     private Story currentStory;
+    private AudioClip[] dialogueClips;
+    private int dialogueIndex;
+    private AudioSource audioSource;
 
     public bool dialogueIsPlaying { get; private set; }
 
@@ -18,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Retrieving Input From")]
     public GameObject Player;
     Interaction interaction;
-
     private void Awake()
     {
         if (instance != null)
@@ -27,6 +29,7 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
         Player = GameObject.Find("PlayerManager/Player");
+        audioSource = Player.GetComponent<AudioSource>();
         interaction = Player.GetComponent<Interaction>();
     }
 
@@ -54,13 +57,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
     {
         currentStory =  new Story (inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        LoadAudioVariables(newDialogueClips);
         ContinueStory();
-
     }
 
     private void ExitDialogueMode()
@@ -70,13 +73,21 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    private void LoadAudioVariables(AudioClip[] newDialogueClips)
+    {
+        dialogueClips = newDialogueClips;
+        dialogueIndex = 0;
+    }
+
     private void ContinueStory()
     {
-
+        
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-
+            audioSource.Stop();
+            audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
+            dialogueIndex++;
         }
         else
         {

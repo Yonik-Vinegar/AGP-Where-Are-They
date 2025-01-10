@@ -8,6 +8,8 @@ public class GrdDialTrigger : MonoBehaviour
     Interaction interaction;
     public GameObject Player;
 
+    [SerializeField] private AudioClip[] grdDialogueAudioClips;
+
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
     private void Awake()
@@ -24,8 +26,9 @@ public class GrdDialTrigger : MonoBehaviour
             {
                 if (PlayerInRange == true)
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                     Debug.Log("DialogueTriggered");
+                    Destroy(gameObject);
                 }
                 
             }

@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
     public GameObject Player;
+    [SerializeField] private AudioClip[] grdDialogueAudioClips;
     //public GameObject DialogueManager
 
     private void Awake()
@@ -23,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (interaction.DialogueInteractionTriggered == true)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                 Debug.Log("DialogueTriggered");
             }
         }
