@@ -46,7 +46,7 @@ public class Interaction : MonoBehaviour
 
                 if (inputManager.InteractionPerformed)
                 {
-                    if (hit.collider.TryGetComponent(out Junction junction))
+                    if (hit.collider.TryGetComponent(out MainJunctionScript junction))
                     {
                         Debug.Log("picking up the junctions");
                         junction.Interact();
@@ -92,15 +92,7 @@ public class Interaction : MonoBehaviour
         else {  ContinueDialogueTriggered= false; }
     }
 
-    // private void PuzzleInteraction()
-    // {
-    //     if (inputManager.InteractionPerformed == true)
-    //     {
-    //         Debug.Log("puzzle interaction");
-    //         PuzzleInteractionTriggered= true;
-    //     }
-    //     else { PuzzleInteractionTriggered= false; }
-    // }
+
   
     
 }

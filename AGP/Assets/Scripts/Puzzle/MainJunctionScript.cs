@@ -9,11 +9,19 @@ public class MainJunctionScript : MonoBehaviour
     public bool IsCharged;
     public bool[] triggerBools;
     [SerializeField] private bool firstJunction;
+    private Quaternion targetRotation;
+    private float turnSpeed = 5;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        targetRotation = transform.rotation;
+    }
     void Update()
     {
         CheckPreviousJunction();
         CheckTriggers();
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
 
 
@@ -47,5 +55,19 @@ public class MainJunctionScript : MonoBehaviour
         {
             IsCharged = false;
         }
+    }
+
+    public void RotateJunction()
+    {
+        if (IsCharged == false)
+        {
+            targetRotation *= Quaternion.AngleAxis(90, Vector3.forward);
+        }
+
+    }
+    public void Interact()
+    {
+        Debug.Log("interacting with junction");
+        RotateJunction();
     }
 }
