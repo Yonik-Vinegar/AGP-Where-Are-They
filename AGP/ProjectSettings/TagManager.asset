@@ -11,6 +11,9 @@ TagManager:
   - Pipe
   - GroundTrigger
   - GameplayCamera
+  - InPipe
+  - OutPipe
+  - PuzzleCheckPos
   layers:
   - Default
   - TransparentFX

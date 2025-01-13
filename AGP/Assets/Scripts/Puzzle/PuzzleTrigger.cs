@@ -14,23 +14,44 @@ public class PuzzleTrigger : MonoBehaviour
         connectedJunction = AssignedJunction.GetComponent<Junction>();
     }
 
+    private void Update()
+    {
+        if (connectedJunction.outputCollider == true && connectedJunction.inputCollider == false)
+        {
+            connectedJunction.outputCollider = false;
+        }
+        if (connectedJunction.inputCollider == true && connectedJunction.outputCollider == false)
+        {
+            connectedJunction.inputCollider = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pipe"))
+        if (other.CompareTag("InPipe"))
+        {
+            connectedJunction.inputCollider = true;
+            Debug.Log("is this activating input");
+
+        }
+        if (other.CompareTag("OutPipe"))
         {
             connectedJunction.outputCollider = true;
-            connectedJunction.inputCollider = true;
-
+            Debug.Log("Is this activating output");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Pipe"))
+        if (other.CompareTag("InPipe"))
         {
-            connectedJunction.outputCollider = false;
             connectedJunction.inputCollider = false;
 
+        }
+
+        if (other.CompareTag("OutPipe"))
+        {
+            connectedJunction.outputCollider = false;
         }
     }
 
