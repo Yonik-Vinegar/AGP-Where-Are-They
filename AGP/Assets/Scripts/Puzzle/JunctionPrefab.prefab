@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4077297920295976728}
   - component: {fileID: 7138011744356593898}
   - component: {fileID: 4239523286480342814}
+  - component: {fileID: 2818653912669713387}
   m_Layer: 3
   m_Name: JunctionPrefab
   m_TagString: Junction
@@ -53,7 +54,7 @@ MonoBehaviour:
   inputCollider: 0
   outputCollider: 0
   EnergyCanMove: 0
-  JunctionsAligned: 0
+  JunctionAligned: 0
   Player: {fileID: 0}
 --- !u!65 &7138011744356593898
 BoxCollider:
@@ -97,6 +98,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5268151, y: 0.8586088, z: 1}
   m_Center: {x: 0.009964734, y: 0.23080474, z: 0}
+--- !u!114 &2818653912669713387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240513982217928403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf43b6a4566d5144898ebba055221a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousJunction: {fileID: 0}
+  IsCharged: 0
+  triggerBools: 0000
+  firstJunction: 0
 --- !u!1 &5687863013684119023
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +126,7 @@ GameObject:
   - component: {fileID: 3582774805375479697}
   - component: {fileID: 2320591522820060642}
   - component: {fileID: 665998760557721046}
+  - component: {fileID: 3637070689922282084}
   m_Layer: 3
   m_Name: InputCollider
   m_TagString: EnergyMovePos
@@ -159,7 +177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5687863013684119023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7756e549b630a45a041ea718caeed6, type: 3}
   m_Name: 
@@ -193,6 +211,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 62
   m_CollisionDetection: 0
+--- !u!114 &3637070689922282084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687863013684119023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4997394f2286244b3dfe5bc1224322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  junctionScript: {fileID: 2818653912669713387}
+  boolNumber: 0
 --- !u!1 &8384234900874928723
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +237,7 @@ GameObject:
   - component: {fileID: 3266952068958270426}
   - component: {fileID: 5972473470240010999}
   - component: {fileID: 9087706481759098438}
+  - component: {fileID: 9126023194504628640}
   m_Layer: 3
   m_Name: outputCollider
   m_TagString: EnergyMovePos
@@ -255,7 +288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8384234900874928723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7756e549b630a45a041ea718caeed6, type: 3}
   m_Name: 
@@ -289,6 +322,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 62
   m_CollisionDetection: 0
+--- !u!114 &9126023194504628640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384234900874928723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4997394f2286244b3dfe5bc1224322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  junctionScript: {fileID: 2818653912669713387}
+  boolNumber: 1
 --- !u!1001 &3610491431808461440
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class PuzzleFlow : MonoBehaviour
 
     private void Awake()
     {
-        junctionAlignment = junctionsManager.GetComponentInChildren<Junction>();
+        //junctionAlignment = junctionsManager.GetComponentInChildren<Junction>();
 
     }
 
@@ -85,17 +85,17 @@ public class PuzzleFlow : MonoBehaviour
 
     private void CheckingForAlignment()
     {
-        bool[] JunctionsAlignCheck = new JunctionAlighCheck[JunctionCount];
-        junctionAlignment.junctionAlignment.Junction.JunctionAligned(out JunctionsAlignCheck[JunctionCount++])
-        junctionALignment.junctionAlignment.junction.JunctionAligned(out JunctionAlignCheck[)
-        finalCheck = true;
-        foreach (bool JunctionCompleted in JunctionsAlignCheck)
-        {
-            if (JunctionCompleted == false)
-            {
-                finalCheck = false;
-            }
-        }
+        //bool[] JunctionsAlignCheck = new JunctionAlighCheck[JunctionCount];
+        //junctionAlignment.junctionAlignment.Junction.JunctionAligned(out JunctionsAlignCheck[JunctionCount++])
+        //junctionALignment.junctionAlignment.junction.JunctionAligned(out JunctionAlignCheck[)
+        // finalCheck = true;
+        // foreach (bool JunctionCompleted in JunctionsAlignCheck)
+        // {
+        //     if (JunctionCompleted == false)
+        //     {
+        //         finalCheck = false;
+        //     }
+        // }
 
     }
 
