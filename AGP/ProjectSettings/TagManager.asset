@@ -14,6 +14,8 @@ TagManager:
   - InPipe
   - OutPipe
   - PuzzleCheckPos
+  - Slope
+  - Console
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     PlayerInputs PlayerControls;
 
     public bool lockCursor = true;
-    public Vector2 movementInput;
+    public Vector3 movementInput;
     public Vector2 cameraInput;
     private bool InteractPressed = false;
     public bool InteractionPerformed;
@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
         if (PlayerControls == null)
         {
             PlayerControls = new PlayerInputs();
-            PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector2>();
+            PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector3>();
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerControls.InteractionActionMap.Interact.performed += i => InteractPressed = true;
             PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePerformed = true;

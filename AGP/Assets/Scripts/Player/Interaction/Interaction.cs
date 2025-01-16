@@ -19,8 +19,8 @@ public class Interaction : MonoBehaviour
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
-    [Header("Deciding which interaction to follow")]
-    [SerializeField] private GameObject[] junction;
+    //[Header("Deciding which interaction to follow")]
+    //[SerializeField] private GameObject[] junction;
 
     public void Awake()
     {
@@ -51,7 +51,17 @@ public class Interaction : MonoBehaviour
                         Debug.Log("picking up the junctions");
                         junction.Interact();
                     }
+
+                    if (hit.collider.TryGetComponent(out Console consoleScript))
+                    {
+                        Debug.Log("Receving the raycast hit");
+                        if (consoleScript.CanActivate == true)
+                        {
+                            consoleScript.ConsoleTrigger();
+                        }
+                    }
                 }
+
 
 
             }
@@ -91,8 +101,5 @@ public class Interaction : MonoBehaviour
         }
         else {  ContinueDialogueTriggered= false; }
     }
-
-
-  
     
 }
