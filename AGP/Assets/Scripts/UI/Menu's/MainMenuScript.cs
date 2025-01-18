@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
+        Debug.Log("UI sucks");
     }
 
     public void ExitGame()
