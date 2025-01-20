@@ -7,7 +7,6 @@ public class GrdDialTrigger : MonoBehaviour
     private bool PlayerInRange;
     Interaction interaction;
     public GameObject Player;
-
     [SerializeField] private AudioClip[] grdDialogueAudioClips;
 
     [Header("Ink Json")]
@@ -41,6 +40,7 @@ public class GrdDialTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             PlayerInRange = true;
+
         }
     }
 

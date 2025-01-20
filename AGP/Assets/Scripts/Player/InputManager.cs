@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
     public bool lockCursor = true;
     public Vector3 movementInput;
     public Vector2 cameraInput;
-    private bool InteractPressed = false;
+    public bool InteractPressed = false;
     public bool InteractionPerformed;
     private bool ContinuePerformed = false;
     public bool ContinuePressed;
@@ -21,23 +21,17 @@ public class InputManager : MonoBehaviour
     public float cameraInputY;
     public float cameraInputX;
 
+    public GameObject FinalConsole;
+    Console consoleScript;
 
     private void Start()
     {
-        if (lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        consoleScript = FinalConsole.GetComponent<Console>();
     }
 
     private void OnEnable()
     {
+        
         if (PlayerControls == null)
         {
             PlayerControls = new PlayerInputs();
@@ -72,24 +66,38 @@ public class InputManager : MonoBehaviour
 
     public void Update()
     {
-        if (InteractPressed == true)
+        if (consoleScript.GameActive == true)
         {
-            InteractionPerformed = true;
-            InteractPressed = false;
-        }
-        else
-        {
-            InteractionPerformed = false;
-        }
 
-        if (ContinuePerformed == true)
+            if (InteractPressed == true)
+            {
+                InteractionPerformed = true;
+                InteractPressed = false;
+            }
+            else
+            {
+                InteractionPerformed = false;
+            }
+
+            if (ContinuePerformed == true)
+            {
+                ContinuePressed = true;
+                ContinuePerformed = false;
+            }
+            else
+            {
+                ContinuePressed = false;
+            }
+        }
+        if (lockCursor == true)
         {
-            ContinuePressed = true;
-            ContinuePerformed = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
-            ContinuePressed = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

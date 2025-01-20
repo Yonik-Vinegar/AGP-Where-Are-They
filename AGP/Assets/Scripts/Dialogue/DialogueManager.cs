@@ -14,13 +14,14 @@ public class DialogueManager : MonoBehaviour
     private AudioClip[] dialogueClips;
     private int dialogueIndex;
     private AudioSource audioSource;
-
+    
     public bool dialogueIsPlaying { get; private set; }
 
     private static DialogueManager instance;
     [Header("Retrieving Input From")]
     public GameObject Player;
     Interaction interaction;
+
     private void Awake()
     {
         if (instance != null)
