@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour
     public bool InteractionPerformed;
     private bool ContinuePerformed = false;
     public bool ContinuePressed;
+    private bool PausePerformed;
+    public bool PausePressed;
 
     public float verticalInput;
     public float horizontalInput;
@@ -23,15 +25,18 @@ public class InputManager : MonoBehaviour
 
     public GameObject FinalConsole;
     Console consoleScript;
+    public GameObject GameManager;
+    PauseMenu pauseMenu;
 
     private void Start()
     {
         consoleScript = FinalConsole.GetComponent<Console>();
+        pauseMenu = GameManager.GetComponent<PauseMenu> ();
     }
 
     private void OnEnable()
     {
-        
+
         if (PlayerControls == null)
         {
             PlayerControls = new PlayerInputs();
@@ -39,6 +44,7 @@ public class InputManager : MonoBehaviour
             PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerControls.InteractionActionMap.Interact.performed += i => InteractPressed = true;
             PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePerformed = true;
+            PlayerControls.InteractionActionMap.PauseUI.performed += i => PausePerformed = true;
         }
 
         PlayerControls.Enable();
@@ -66,9 +72,26 @@ public class InputManager : MonoBehaviour
 
     public void Update()
     {
-        if (consoleScript.GameActive == true)
+        if (consoleScript.GameActive == true )
         {
+            HandleIFStatements();
+        }
+        if (lockCursor == true)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
 
+    private void HandleIFStatements()
+    {
+        if (pauseMenu.isPaused == false)
+        {
             if (InteractPressed == true)
             {
                 InteractionPerformed = true;
@@ -89,15 +112,14 @@ public class InputManager : MonoBehaviour
                 ContinuePressed = false;
             }
         }
-        if (lockCursor == true)
+        if (PausePerformed == true)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            PausePressed = true;
+            PausePerformed = false;
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            PausePressed = false;
         }
     }
 

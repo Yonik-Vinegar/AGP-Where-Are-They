@@ -28,8 +28,9 @@ public class GrdDialTrigger : MonoBehaviour
                     DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                     Debug.Log("DialogueTriggered");
                     Destroy(gameObject);
+                    interaction.ContinueCue.SetActive(true);
                 }
-                
+
             }
 
         }

@@ -112,6 +112,61 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""3D Vector"",
+                    ""id"": ""b5b05167-3346-48af-aa00-f643c7d84193"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementInputs"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""30b2bf87-a020-4632-90b4-beba6380f7b3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f5f4096c-426c-453e-9a9d-5c0c6d5172ef"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""0fc585d6-ce89-4779-b80c-7638efb6f3ce"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4e44871c-3bc8-4465-9782-8443cab6cad2"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""9be49a08-8a2a-406b-9df8-e9ee08538f14"",
                     ""path"": ""<Mouse>/delta"",
@@ -167,6 +222,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""030ecacd-e2ac-472e-a1f4-5c95557c7755"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -200,6 +264,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8d4ef9d-6629-4f27-8dc3-24afc5ed0f5c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -733,6 +808,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_InteractionActionMap = asset.FindActionMap("InteractionActionMap", throwIfNotFound: true);
         m_InteractionActionMap_Continue = m_InteractionActionMap.FindAction("Continue", throwIfNotFound: true);
         m_InteractionActionMap_Interact = m_InteractionActionMap.FindAction("Interact", throwIfNotFound: true);
+        m_InteractionActionMap_PauseUI = m_InteractionActionMap.FindAction("PauseUI", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -870,12 +946,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private List<IInteractionActionMapActions> m_InteractionActionMapActionsCallbackInterfaces = new List<IInteractionActionMapActions>();
     private readonly InputAction m_InteractionActionMap_Continue;
     private readonly InputAction m_InteractionActionMap_Interact;
+    private readonly InputAction m_InteractionActionMap_PauseUI;
     public struct InteractionActionMapActions
     {
         private @PlayerInputs m_Wrapper;
         public InteractionActionMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Continue => m_Wrapper.m_InteractionActionMap_Continue;
         public InputAction @Interact => m_Wrapper.m_InteractionActionMap_Interact;
+        public InputAction @PauseUI => m_Wrapper.m_InteractionActionMap_PauseUI;
         public InputActionMap Get() { return m_Wrapper.m_InteractionActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -891,6 +969,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @PauseUI.started += instance.OnPauseUI;
+            @PauseUI.performed += instance.OnPauseUI;
+            @PauseUI.canceled += instance.OnPauseUI;
         }
 
         private void UnregisterCallbacks(IInteractionActionMapActions instance)
@@ -901,6 +982,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @PauseUI.started -= instance.OnPauseUI;
+            @PauseUI.performed -= instance.OnPauseUI;
+            @PauseUI.canceled -= instance.OnPauseUI;
         }
 
         public void RemoveCallbacks(IInteractionActionMapActions instance)
@@ -1046,6 +1130,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     {
         void OnContinue(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPauseUI(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -71,6 +71,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        interaction.ContinueCue.SetActive(false);
 
     }
 

@@ -18,7 +18,8 @@ public class Interaction : MonoBehaviour
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
-
+    [SerializeField] private GameObject KeyCue;
+     public GameObject ContinueCue;
     //[Header("Deciding which interaction to follow")]
     //[SerializeField] private GameObject[] junction;
 
@@ -26,6 +27,8 @@ public class Interaction : MonoBehaviour
     {
         inputManager = GetComponent<InputManager>();
         visualCue.SetActive(false);
+        KeyCue.SetActive(false);
+        ContinueCue.SetActive(false);
     }
     // Update is called once per frame
     private void Update()
@@ -37,14 +40,16 @@ public class Interaction : MonoBehaviour
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, Distance, InteractionLayerMask))
             {
                 visualCue.SetActive(true);
+                KeyCue.SetActive(true);
                 
                 if (hit.transform.CompareTag("Robot"))
                 {
                     Debug.Log("picking up the robot");
                     DialogueInteraction();
+
                 }
 
-                if (inputManager.InteractionPerformed)
+                if (inputManager.InteractionPerformed) //Maxim helped with these if statement sections sections.
                 {
                     if (hit.collider.TryGetComponent(out MainJunctionScript junction))
                     {
@@ -68,6 +73,7 @@ public class Interaction : MonoBehaviour
             else
             {
                 visualCue.SetActive(false);
+                KeyCue.SetActive(false);
             }
         }
 
@@ -91,13 +97,15 @@ public class Interaction : MonoBehaviour
         if (inputManager.InteractionPerformed == true)
         {
             DialogueInteractionTriggered = true;
+            KeyCue.SetActive(false);
+            ContinueCue.SetActive(true);
         }
         else { DialogueInteractionTriggered= false; }
 
         if (inputManager.ContinuePressed == true)
         {
             ContinueDialogueTriggered = true;
-            
+            ContinueCue.SetActive(true);
         }
         else {  ContinueDialogueTriggered= false; }
     }
