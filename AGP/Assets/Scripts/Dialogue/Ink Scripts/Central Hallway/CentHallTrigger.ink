@@ -1,0 +1,1 @@
+Great, whoever built this place couldn’t even be bothered to put in backup generators.

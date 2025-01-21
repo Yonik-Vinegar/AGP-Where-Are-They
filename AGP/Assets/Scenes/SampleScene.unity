@@ -912,15 +912,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 1af1f194fb7a04349820ce1fbb72784d, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 65a9a6fb2c369eb4fb2784fc51ccd8d0, type: 3}
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
+  - {fileID: 8300000, guid: 0e49f0f806892674f9121499a5b60806, type: 3}
   - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
-  - {fileID: 8300000, guid: 85b86937c9766e24da49f79d53b13728, type: 3}
-  - {fileID: 8300000, guid: 333c2faa4cbc8904db80f0b23a97a7f7, type: 3}
-  - {fileID: 8300000, guid: 08d6fecc8aada734db90e7f58f0afa4a, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -1827,7 +1824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: c1d16ae9732c62f469dce386b6964ba3, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
@@ -3697,7 +3694,7 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 71db5fc08b9e4c442b71e740df4293ce, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 7d00fce2b67c4b342aedef0706134cf2, type: 3}
 --- !u!65 &244513283
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5209,7 +5206,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.44000003, z: 40.43}
+  m_LocalPosition: {x: 0.79999995, y: -0.44000003, z: 40.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6680,7 +6677,7 @@ Transform:
   m_GameObject: {fileID: 421576564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.44, z: 40.43}
+  m_LocalPosition: {x: 0.8, y: -0.44, z: 40.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7730,11 +7727,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
+  - {fileID: 8300000, guid: a3f7561370e121441ab98c24e3fb4cb6, type: 3}
   - {fileID: 8300000, guid: 0571744c0868b314fa65d272b36c02b2, type: 3}
   - {fileID: 8300000, guid: cb0258dd363a99447aeead7a068c32a1, type: 3}
   - {fileID: 8300000, guid: 25f7a6f83b4ef684dbc5f23146ea4b87, type: 3}
   - {fileID: 8300000, guid: d36985c1ab59f4a439f3077e47237b8f, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
 --- !u!65 &477452005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8063,7 +8061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: a6c7be025cadb624b8f2b0cf3aaa29ac, type: 3}
@@ -8271,7 +8269,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58b62b62267026749bd6052291d54967, type: 3}
   - {fileID: 8300000, guid: 4746c0e31c6359346915decf656325a8, type: 3}
   - {fileID: 8300000, guid: 057bb64b518dc534caa99a64d53c5536, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: de306ba38be659a4e8ea392ee6bf33fc, type: 3}
 --- !u!65 &518846242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8592,7 +8590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: c2891bc6341736648a2ed626a108e53a, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
@@ -9307,14 +9305,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 3ff24f3785c70cc488b0cdf7779e4627, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
   - {fileID: 8300000, guid: 677c0b1e498b91c42a5656cf98af1bae, type: 3}
   - {fileID: 8300000, guid: bc5a5819ad3bf794ebecd503d95d1f82, type: 3}
+  - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
   - {fileID: 8300000, guid: 737bb97926ef4df488a9dee39ac022a9, type: 3}
-  - {fileID: 8300000, guid: a3f7561370e121441ab98c24e3fb4cb6, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -9604,7 +9602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 46c245301a6971c4aa074fcb55b31ab5, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 53fb4c550bde66349bf774062059c2ce, type: 3}
@@ -11599,7 +11597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 83f549b00d5e22f4f97af9aa23b92fcd, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
@@ -11858,7 +11856,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3cff43fd514b75d4cba29aab10231837, type: 3}
   - {fileID: 8300000, guid: 73f36299dd85cab49a92e4a2d579f9dd, type: 3}
   - {fileID: 8300000, guid: 136ec75332386d349b3c18b2bdde37d6, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: cd96defb8e39f8d428017355cdd6d5bb, type: 3}
 --- !u!65 &814910783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14017,7 +14015,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 10565b9a150143247bd709674945e7f4, type: 3}
   - {fileID: 8300000, guid: 5bda729734e9300428ba5ec8481b2e24, type: 3}
   - {fileID: 8300000, guid: 958c05f2b7f234e428e7a94142d5fe36, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 206ec7bfa755a0b4d92d9d4547e2b456, type: 3}
 --- !u!65 &984828593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15894,7 +15892,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5336b1ee8b0d2944f9ec718de4c0f054, type: 3}
   - {fileID: 8300000, guid: 0dfb81a525bed214098c22ddd2f824e4, type: 3}
   - {fileID: 8300000, guid: bef7b0fb0e510f64483a1205b1e3ce4d, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
 --- !u!114 &1096359432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17253,7 +17251,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 30015b25d073df14ab0f6ffe0ab97583, type: 3}
   - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
   - {fileID: 8300000, guid: 6355326671d782f45ab597cdd6d1fedb, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: e701f43f05014e04699fb3ed85b17ea7, type: 3}
 --- !u!65 &1188799926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17348,7 +17346,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e0990501715f74f45a78e6353425b92c, type: 3}
   - {fileID: 8300000, guid: 44775f0fa14ad8841b9d46b66e820ef1, type: 3}
   - {fileID: 8300000, guid: 43b34c60fe9fc2d4b9089850636a58a9, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 718c94757c18dd742bb9a142a0325913, type: 3}
 --- !u!65 &1191511195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18095,7 +18093,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eed389a5dea7b734086d52dcb9e29e5f, type: 3}
   - {fileID: 8300000, guid: 650e6c86d5bc6ab46930c56b248006a9, type: 3}
   - {fileID: 8300000, guid: 044b933a8ef76294287333656033b0c8, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: aa9e4b2df07b9314d911e085cfdc57d5, type: 3}
 --- !u!65 &1283757529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22137,7 +22135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0dfeeecb16ef47928c5f8fbcefd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 207f998207b778b4682ede6161bf94ae, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 65a9a6fb2c369eb4fb2784fc51ccd8d0, type: 3}
@@ -22831,7 +22829,7 @@ Transform:
   m_GameObject: {fileID: 1712492296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16802055, y: 0.6063999, z: -0.1330569, w: -0.76573116}
-  m_LocalPosition: {x: -3.6399999, y: -0.54, z: -2.1399994}
+  m_LocalPosition: {x: -3.59, y: -0.54, z: -1.6599998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25796,7 +25794,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 60e74ba428bceab4a85fb086d081e788, type: 3}
   - {fileID: 8300000, guid: 029c942c48db3bb42b1736372c697e41, type: 3}
   - {fileID: 8300000, guid: 05063a5c2f41c4648ad0d75ee4a4f0f0, type: 3}
-  inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
+  inkJSON: {fileID: 4900000, guid: a5c091ad8c72f0a4597ad2adbfb39995, type: 3}
 --- !u!65 &1991179815
 BoxCollider:
   m_ObjectHideFlags: 0
