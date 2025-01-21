@@ -36,7 +36,7 @@ public class MainJunctionScript : MonoBehaviour
             previousCharged = true;
         }
     }
-
+    //Connor aided in the functions below.
     private void CheckTriggers()
     {
         if (previousCharged)

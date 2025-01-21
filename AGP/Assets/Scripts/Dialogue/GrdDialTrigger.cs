@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GrdDialTrigger : MonoBehaviour
 {
+    //Code is a modified script from https://www.youtube.com/watch?v=vY0Sk93YUhA&list=PLkz5NgoW6xcWtxugVBcK58aIHpxyjjCSE&index=3
+    PlayerManager playerManager;
     private bool PlayerInRange;
     Interaction interaction;
     public GameObject Player;
@@ -16,22 +18,26 @@ public class GrdDialTrigger : MonoBehaviour
         PlayerInRange = false;
         Player = GameObject.Find("PlayerManager/Player");
         interaction = Player.GetComponent<Interaction>();
+        playerManager = Player.GetComponent<PlayerManager>();
     }
 
     private void Update()
     {
         {
-            if (!DialogueManager.GetInstance().dialogueIsPlaying)
-            {
-                if (PlayerInRange == true)
+                
+                if (!DialogueManager.GetInstance().dialogueIsPlaying)
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
-                    Debug.Log("DialogueTriggered");
-                    Destroy(gameObject);
-                    interaction.ContinueCue.SetActive(true);
-                }
+                    if (PlayerInRange == true && playerManager.PlayerDead == false)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
+                        Debug.Log("DialogueTriggered");
+                        Destroy(gameObject);
+                        interaction.ContinueCue.SetActive(true);
+                    }
 
-            }
+                }
+            
+
 
         }
     }
@@ -40,8 +46,15 @@ public class GrdDialTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            PlayerInRange = true;
+            if (playerManager.PlayerDead == false)
+            {
+                PlayerInRange = true;
+            }
+            else
+            {
+                PlayerInRange = false;
 
+            }
         }
     }
 

@@ -9,12 +9,15 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     PlayerLocomation playerLocomation;
     DialogueManager dialogueManager;
+    Console console;
     public GameObject DialogueManager;
+    public GameObject CheckConsole;
 
     [Header("HeartBeatSystem")]
-    public int HeartBeat;
+    public float HeartBeat;
     public TextMeshProUGUI HeartRateText;
-
+    public bool PlayerDead;
+    public float DecreasePerSecond;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -22,13 +25,25 @@ public class PlayerManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerLocomation = GetComponent<PlayerLocomation>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
+        console = CheckConsole.GetComponent<Console>();
         
     }
 
     private void Update()
     {
+        HeartBeat -= DecreasePerSecond * Time.deltaTime;
         inputManager.HandleAllInputs();
         HeartRateText.text = "Heart Rate: "+ HeartBeat;
+        if (HeartBeat >= 120f)
+        {
+            PlayerDead = true;
+            console.EndGame();
+        }
+        else { PlayerDead = false; }
+        if (HeartBeat <= 80f)
+        {
+            HeartBeat = 80f;
+        }
     }
 
     private void FixedUpdate()

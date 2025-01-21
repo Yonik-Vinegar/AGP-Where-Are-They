@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1783434633}
   HeartBeatInc: 0
-  HeartBeatDec: 2
+  HeartBeatDec: 5
   Player: {fileID: 421576564}
 --- !u!114 &244513282
 MonoBehaviour:
@@ -6736,8 +6736,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueManager: {fileID: 1512868862}
-  HeartBeat: 0
+  CheckConsole: {fileID: 200244146}
+  HeartBeat: 85
   HeartRateText: {fileID: 1188592420}
+  PlayerDead: 0
+  DecreasePerSecond: 1
 --- !u!54 &421576572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8244,8 +8247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
-  HeartBeatDec: 0
+  HeartBeatInc: 0
+  HeartBeatDec: 5
   Player: {fileID: 421576564}
 --- !u!114 &518846241
 MonoBehaviour:
@@ -11836,8 +11839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
-  HeartBeatDec: 0
+  HeartBeatInc: 0
+  HeartBeatDec: 5
   Player: {fileID: 421576564}
 --- !u!114 &814910782
 MonoBehaviour:
@@ -13993,7 +13996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
+  HeartBeatInc: 35
   HeartBeatDec: 0
   Player: {fileID: 421576564}
 --- !u!114 &984828592
@@ -15172,8 +15175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
-  HeartBeatDec: 0
+  HeartBeatInc: 0
+  HeartBeatDec: 20
   Player: {fileID: 421576564}
 --- !u!114 &1054372465
 MonoBehaviour:
@@ -15906,7 +15909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
+  HeartBeatInc: 25
   HeartBeatDec: 0
   Player: {fileID: 421576564}
 --- !u!1 &1097259731
@@ -17226,7 +17229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
+  HeartBeatInc: 25
   HeartBeatDec: 0
   Player: {fileID: 421576564}
 --- !u!114 &1188799925
@@ -17320,7 +17323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
+  HeartBeatInc: 0
   HeartBeatDec: 0
   Player: {fileID: 421576564}
 --- !u!114 &1191511194
@@ -18072,8 +18075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
-  HeartBeatDec: 0
+  HeartBeatInc: 0
+  HeartBeatDec: 15
   Player: {fileID: 421576564}
 --- !u!114 &1283757528
 MonoBehaviour:
@@ -25772,8 +25775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventAnimator: {fileID: 1057902812}
-  HeartBeatInc: 5
-  HeartBeatDec: 0
+  HeartBeatInc: 0
+  HeartBeatDec: 5
   Player: {fileID: 421576564}
 --- !u!114 &1991179814
 MonoBehaviour:

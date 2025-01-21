@@ -56,7 +56,7 @@ public class Console : MonoBehaviour
         EndGame();
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         if (EndingTrigger == true)
         {

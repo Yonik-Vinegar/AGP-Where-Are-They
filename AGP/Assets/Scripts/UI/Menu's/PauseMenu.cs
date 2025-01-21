@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         HeartRate.SetActive(true);
         Crosshair.SetActive(true);
+        inputManager.lockCursor = true;
     }
 
     public void QuitGame()

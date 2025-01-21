@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private AudioSource audioSource;
     
     public bool dialogueIsPlaying { get; private set; }
+    PlayerManager playerManager;
 
     private static DialogueManager instance;
     [Header("Retrieving Input From")]
@@ -32,6 +33,7 @@ public class DialogueManager : MonoBehaviour
         Player = GameObject.Find("PlayerManager/Player");
         audioSource = Player.GetComponent<AudioSource>();
         interaction = Player.GetComponent<Interaction>();
+        playerManager = Player.GetComponent<PlayerManager>();
     }
 
     public static DialogueManager GetInstance()
@@ -56,6 +58,10 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
+        if (playerManager.PlayerDead == true)
+        {
+            audioSource.mute = true;
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
@@ -65,6 +71,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         LoadAudioVariables(newDialogueClips);
         ContinueStory();
+        
     }
 
     private void ExitDialogueMode()
