@@ -5,30 +5,47 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     Interaction interaction;
+    InputManager inputManager;
 
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
     public GameObject Player;
     [SerializeField] private AudioClip[] grdDialogueAudioClips;
+    public bool DialogueInteractionTriggered;
+    public bool PuzzleInteractionTriggered;
+    public bool ContinueDialogueTriggered;
+    public bool GroundContinueDialogue;
+    
     //public GameObject DialogueManager
 
     private void Awake()
     {
         Player = GameObject.Find("PlayerManager/Player");
-        interaction = Player.GetComponent<Interaction>();   
+        interaction = Player.GetComponent<Interaction>();
+        inputManager = Player.GetComponent<InputManager>();
     }
 
     private void Update()
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)   
         {
-            if (interaction.DialogueInteractionTriggered == true)
+            if (DialogueInteractionTriggered == true)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
+                DialogueManager.GetInstance().EnterDialogueMode( inkJSON, grdDialogueAudioClips);
                 Debug.Log("DialogueTriggered");
             }
         }
 
     }
+    public void DialogueInteraction()
+    {
+        if (inputManager.InteractionPerformed == true)
+        {
+            DialogueInteractionTriggered = true;
+            interaction.KeyCue.SetActive(false);
+            interaction.ContinueCue.SetActive(true);
+        }
+        else { DialogueInteractionTriggered = false; }
 
+    }
 }

@@ -10,15 +10,13 @@ public class Interaction : MonoBehaviour
     //[SerializeField] private Transform objectGrabPointTransform;
     InputManager inputManager;
     private Interactable Interactable;
-    public bool DialogueInteractionTriggered;
     public bool PuzzleInteractionTriggered;
-    public bool ContinueDialogueTriggered;
     public bool GroundContinueDialogue;
+    public bool ContinueDialogueTriggered;
 
 
     [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
-    [SerializeField] private GameObject KeyCue;
+     public GameObject KeyCue;
      public GameObject ContinueCue;
     //[Header("Deciding which interaction to follow")]
     //[SerializeField] private GameObject[] junction;
@@ -26,7 +24,6 @@ public class Interaction : MonoBehaviour
     public void Awake()
     {
         inputManager = GetComponent<InputManager>();
-        visualCue.SetActive(false);
         KeyCue.SetActive(false);
         ContinueCue.SetActive(false);
     }
@@ -39,13 +36,13 @@ public class Interaction : MonoBehaviour
              float Distance = 5f;
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, Distance, InteractionLayerMask))
             {
-                visualCue.SetActive(true);
                 KeyCue.SetActive(true);
                 
-                if (hit.transform.CompareTag("Robot"))
+                if (hit.collider.TryGetComponent(out DialogueTrigger dialogueTrigger))
                 {
                     Debug.Log("picking up the robot");
-                    DialogueInteraction();
+                    dialogueTrigger.DialogueInteraction();
+
 
                 }
 
@@ -59,6 +56,7 @@ public class Interaction : MonoBehaviour
 
                     if (hit.collider.TryGetComponent(out Console consoleScript))
                     {
+ 
                         Debug.Log("Receving the raycast hit");
                         if (consoleScript.CanActivate == true)
                         {
@@ -72,7 +70,6 @@ public class Interaction : MonoBehaviour
             }
             else
             {
-                visualCue.SetActive(false);
                 KeyCue.SetActive(false);
             }
         }
@@ -91,23 +88,15 @@ public class Interaction : MonoBehaviour
         else { GroundContinueDialogue = false; }
 
     }
-
-    private void DialogueInteraction()
+    public void DialogueInteraction()
     {
-        if (inputManager.InteractionPerformed == true)
-        {
-            DialogueInteractionTriggered = true;
-            KeyCue.SetActive(false);
-            ContinueCue.SetActive(true);
-        }
-        else { DialogueInteractionTriggered= false; }
-
         if (inputManager.ContinuePressed == true)
         {
             ContinueDialogueTriggered = true;
             ContinueCue.SetActive(true);
         }
-        else {  ContinueDialogueTriggered= false; }
+        else { ContinueDialogueTriggered = false; }
     }
-    
+
+
 }

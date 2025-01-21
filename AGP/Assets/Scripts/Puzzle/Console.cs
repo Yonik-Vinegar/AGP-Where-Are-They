@@ -10,6 +10,7 @@ public class Console : MonoBehaviour
     public Animator mAnimator;
     public bool CanActivate;
 
+
     [Header("For the final console")]
     public bool EndingTrigger;
     InputManager inputManager;
@@ -42,6 +43,7 @@ public class Console : MonoBehaviour
         {
             CanActivate = false;
         }
+
     }
 
     public void ConsoleTrigger()
