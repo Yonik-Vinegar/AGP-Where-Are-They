@@ -10,7 +10,6 @@ public class InputManager : MonoBehaviour
 
     public bool lockCursor = true;
     public Vector3 movementInput;
-    public Vector2 cameraInput;
     public bool InteractPressed = false;
     public bool InteractionPerformed;
     private bool ContinuePerformed = false;
@@ -20,8 +19,6 @@ public class InputManager : MonoBehaviour
 
     public float verticalInput;
     public float horizontalInput;
-    public float cameraInputY;
-    public float cameraInputX;
 
     public GameObject FinalConsole;
     Console consoleScript;
@@ -41,7 +38,6 @@ public class InputManager : MonoBehaviour
         {
             PlayerControls = new PlayerInputs();
             PlayerControls.MovementActions.MovementInputs.performed += i => movementInput = i.ReadValue<Vector3>();
-            PlayerControls.MovementActions.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerControls.InteractionActionMap.Interact.performed += i => InteractPressed = true;
             PlayerControls.InteractionActionMap.Continue.performed += i => ContinuePerformed = true;
             PlayerControls.InteractionActionMap.PauseUI.performed += i => PausePerformed = true;
@@ -63,9 +59,6 @@ public class InputManager : MonoBehaviour
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
-
-        cameraInputY = cameraInput.y;
-        cameraInputX = cameraInput.x;
 
 
     }

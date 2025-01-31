@@ -1,6 +1,6 @@
 # Blender 4.1.1
 # www.blender.org
-mtllib Map.mtl
+mtllib MapRoof.mtl
 o Cube
 v -11.025930 2.318101 -12.326188
 v -11.025930 -2.318101 -12.326188
