@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Retrieving Input From")]
     public GameObject Player;
     Interaction interaction;
+    InputManager inputManager;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour
         audioSource = Player.GetComponent<AudioSource>();
         interaction = Player.GetComponent<Interaction>();
         playerManager = Player.GetComponent<PlayerManager>();
+        inputManager = Player.GetComponent<InputManager>();
     }
 
     public static DialogueManager GetInstance()
@@ -71,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         LoadAudioVariables(newDialogueClips);
         ContinueStory();
-        
+        inputManager.PlyIdleAvailble = false;
     }
 
     private void ExitDialogueMode()
@@ -79,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         interaction.ContinueCue.SetActive(false);
-
+        inputManager.PlyIdleAvailble = true;
     }
 
     private void LoadAudioVariables(AudioClip[] newDialogueClips)

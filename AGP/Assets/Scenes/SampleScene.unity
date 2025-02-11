@@ -6588,6 +6588,7 @@ GameObject:
   - component: {fileID: 421576569}
   - component: {fileID: 421576572}
   - component: {fileID: 421576574}
+  - component: {fileID: 421576575}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -6702,10 +6703,11 @@ MonoBehaviour:
   InteractionPerformed: 0
   ContinuePressed: 0
   PausePressed: 0
+  IdleTimer: 5
+  PlyIdleAvailble: 0
+  PlyIdleEnabled: 0
   verticalInput: 0
   horizontalInput: 0
-  cameraInputY: 0
-  cameraInputX: 0
   FinalConsole: {fileID: 200244146}
   GameManager: {fileID: 1062425907}
 --- !u!114 &421576570
@@ -6886,6 +6888,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &421576575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421576564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4e9e803d639854295a55cd40133960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 82c2b4aef86818540a49f6bc5816e384, type: 3}
+  JsonList:
+  - {fileID: 4900000, guid: 82c2b4aef86818540a49f6bc5816e384, type: 3}
+  - {fileID: 4900000, guid: 10d01fd53ef1b4344bbc69f281ff8c2d, type: 3}
+  - {fileID: 4900000, guid: 5ebf76c532f511c448b99c7e335196ba, type: 3}
+  DialogueInteractionTriggered: 0
+  PuzzleInteractionTriggered: 0
+  ContinueDialogueTriggered: 0
+  GroundContinueDialogue: 0
+  grdDialogueAudioClips: []
 --- !u!1001 &427540188
 PrefabInstance:
   m_ObjectHideFlags: 0
