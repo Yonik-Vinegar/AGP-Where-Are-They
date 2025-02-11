@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     {
         HeartBeat -= DecreasePerSecond * Time.deltaTime;
         inputManager.HandleAllInputs();
-        HeartRateText.text = "Heart Rate: "+ HeartBeat;
+        HeartRateText.text = "Heart Rate: "+ Mathf.Round(HeartBeat);
         if (HeartBeat >= 120f)
         {
             PlayerDead = true;
