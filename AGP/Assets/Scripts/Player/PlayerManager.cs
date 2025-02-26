@@ -15,10 +15,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject DialogueManager;
     public GameObject CheckConsole;
 
-
+    [Header("Camera Systems")]
     public CinemachineVirtualCamera camera;
     CinemachinePOV pov;
     int pauseCameraValue = 1;
+    int Sensitivity; 
     public bool LockInputs;
 
     [Header("HeartBeatSystem")]
@@ -62,7 +63,21 @@ public class PlayerManager : MonoBehaviour
         {
             playerLocomation.HandleAllMovement();
         }
+        else if (LockInputs == true)
+        {
+            pov.m_HorizontalAxis.m_MaxSpeed = 0;
+            pov.m_VerticalAxis.m_MaxSpeed = 0;
+        }
+    }
 
+    private void HandleSensitivity()
+    {
+        if (LockInputs == false)
+        {
+            //pov.m_HorizontalAxis.m_MaxSpeed = pov.m_HorizontalAxis.m_MaxSpeed * pauseCameraValue;
+            //pov.m_VerticalAxis.m_MaxSpeed = pov.m_VerticalAxis.m_MaxSpeed * pauseCameraValue;
+            //Have the senstivity slider be its own variable, then have the Sensitivity in this script = it, unless it's being locked, that changed via an if statement.
+        }
     }
 
 }   
