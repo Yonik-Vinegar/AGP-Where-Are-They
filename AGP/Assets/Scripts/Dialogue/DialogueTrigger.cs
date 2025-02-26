@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     Interaction interaction;
     InputManager inputManager;
+    PlayerManager playerManager;
 
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
@@ -15,6 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool PuzzleInteractionTriggered;
     public bool ContinueDialogueTriggered;
     public bool GroundContinueDialogue;
+    public bool LockInputs;
     
     //public GameObject DialogueManager
 
@@ -23,6 +25,7 @@ public class DialogueTrigger : MonoBehaviour
         Player = GameObject.Find("PlayerManager/Player");
         interaction = Player.GetComponent<Interaction>();
         inputManager = Player.GetComponent<InputManager>();
+        playerManager = Player.GetComponent<PlayerManager>();
     }
 
     private void Update()
@@ -44,8 +47,12 @@ public class DialogueTrigger : MonoBehaviour
             DialogueInteractionTriggered = true;
             interaction.KeyCue.SetActive(false);
             interaction.ContinueCue.SetActive(true);
+            playerManager.LockInputs = LockInputs;
         }
-        else { DialogueInteractionTriggered = false; }
+        else 
+        { 
+            DialogueInteractionTriggered = false;
+        }
 
     }
 }

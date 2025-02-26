@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour
     public bool PuzzleInteractionTriggered;
     public bool GroundContinueDialogue;
     public bool ContinueDialogueTriggered;
+    public bool ToggleInputs;
 
 
     [Header("Visual Cue")]
@@ -30,6 +31,7 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        ToggleInputs = false;
         if (Interactable == null) // do it via pressed then in the actual compare tags of raycast set to triggerd
         {
             RaycastHit hit;
@@ -42,9 +44,10 @@ public class Interaction : MonoBehaviour
                 {
                     Debug.Log("picking up the robot");
                     dialogueTrigger.DialogueInteraction();
-
+                   
 
                 }
+
 
                 if (inputManager.InteractionPerformed) //Maxim helped with these if statement sections sections.
                 {

@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     PlayerLocomation playerLocomation;
     DialogueManager dialogueManager;
+    Interaction interaction;
     Console console;
     public GameObject DialogueManager;
     public GameObject CheckConsole;
@@ -18,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public CinemachineVirtualCamera camera;
     CinemachinePOV pov;
     int pauseCameraValue = 1;
+    public bool LockInputs;
 
     [Header("HeartBeatSystem")]
     public float HeartBeat;
@@ -30,6 +32,7 @@ public class PlayerManager : MonoBehaviour
         pov = camera.GetCinemachineComponent<CinemachinePOV>();
         inputManager = GetComponent<InputManager>();
         playerLocomation = GetComponent<PlayerLocomation>();
+        interaction = GetComponent<Interaction>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
         console = CheckConsole.GetComponent<Console>();
         pov.m_HorizontalAxis.m_MaxSpeed = 100;
@@ -55,26 +58,11 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (dialogueManager.dialogueIsPlaying == true)
-        {
-            return;
-        }
-        else
+        if (LockInputs == false)
         {
             playerLocomation.HandleAllMovement();
         }
 
-
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        HeartBeat = other.HeartBeatInc + other.HeartBeatDec;
-    //        Debug.Log(HeartBeat);
-    //    }
-    //}
-
-
 
 }   

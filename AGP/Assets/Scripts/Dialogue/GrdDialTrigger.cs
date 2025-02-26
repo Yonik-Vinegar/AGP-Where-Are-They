@@ -10,6 +10,7 @@ public class GrdDialTrigger : MonoBehaviour
     Interaction interaction;
     public GameObject Player;
     [SerializeField] private AudioClip[] grdDialogueAudioClips;
+    public bool ToggleInputs;
 
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
@@ -33,6 +34,7 @@ public class GrdDialTrigger : MonoBehaviour
                         Debug.Log("DialogueTriggered");
                         Destroy(gameObject);
                         interaction.ContinueCue.SetActive(true);
+                   
                     }
 
                 }
@@ -48,6 +50,7 @@ public class GrdDialTrigger : MonoBehaviour
         {
             if (playerManager.PlayerDead == false)
             {
+                playerManager.LockInputs = ToggleInputs;
                 PlayerInRange = true;
             }
             else
