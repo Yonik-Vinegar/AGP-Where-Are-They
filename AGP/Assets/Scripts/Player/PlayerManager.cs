@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject DialogueManager;
     public GameObject CheckConsole;
 
+
+    public CinemachineVirtualCamera camera;
+    CinemachinePOV pov;
+    int pauseCameraValue = 1;
+
     [Header("HeartBeatSystem")]
     public float HeartBeat;
     public TextMeshProUGUI HeartRateText;
@@ -21,12 +27,13 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-
+        pov = camera.GetCinemachineComponent<CinemachinePOV>();
         inputManager = GetComponent<InputManager>();
         playerLocomation = GetComponent<PlayerLocomation>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
         console = CheckConsole.GetComponent<Console>();
-        
+        pov.m_HorizontalAxis.m_MaxSpeed = 100;
+        pov.m_VerticalAxis.m_MaxSpeed = 100;
     }
 
     private void Update()
