@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
     {
         HeartBeat -= DecreasePerSecond * Time.deltaTime;
         inputManager.HandleAllInputs();
-        HeartRateText.text = "Heart Rate: "+ HeartBeat;
+        HeartRateText.text = "Heart Rate: "+ Mathf.RoundToInt(HeartBeat);
         if (HeartBeat >= 120f)
         {
             PlayerDead = true;
@@ -61,6 +61,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (LockInputs == false)
         {
+            pov.m_HorizontalAxis.m_MaxSpeed = 100;
+            pov.m_VerticalAxis.m_MaxSpeed = 100;
             playerLocomation.HandleAllMovement();
         }
         else if (LockInputs == true)

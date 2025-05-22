@@ -17,6 +17,9 @@ public class DialogueTrigger : MonoBehaviour
     public bool ContinueDialogueTriggered;
     public bool GroundContinueDialogue;
     public bool LockInputs;
+    public bool IsRobot;
+
+    public Animator RobotAnim;
     
     //public GameObject DialogueManager
 
@@ -48,6 +51,10 @@ public class DialogueTrigger : MonoBehaviour
             interaction.KeyCue.SetActive(false);
             interaction.ContinueCue.SetActive(true);
             playerManager.LockInputs = LockInputs;
+            if (IsRobot)
+            {
+                RobotAnim.SetTrigger("Trigger");
+            }
         }
         else 
         { 
