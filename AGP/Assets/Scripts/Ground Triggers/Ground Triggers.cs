@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GroundTriggers : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class GroundTriggers : MonoBehaviour
     public int HeartBeatDec;
     PlayerManager playerManager;
     public GameObject Player;
+
     private void Awake()
     {
         playerManager = Player.GetComponent<PlayerManager> ();
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +24,8 @@ public class GroundTriggers : MonoBehaviour
             eventAnimator.SetTrigger("EventTrigger");
             Debug.Log(playerManager.HeartBeat);
         }
+
+       
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,5 +36,4 @@ public class GroundTriggers : MonoBehaviour
         }
     }
 
-   
 }
