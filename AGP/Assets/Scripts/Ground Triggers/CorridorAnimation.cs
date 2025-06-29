@@ -8,7 +8,6 @@ public class CorridorAnimation : MonoBehaviour
     public GameObject PlayerPosition;
     public CinemachineVirtualCamera Camera;
     public Transform target;
-    public float FogDensityValue;
     public GameObject Player;
     private Color asda;
 
@@ -33,14 +32,12 @@ public class CorridorAnimation : MonoBehaviour
     {
         Player.transform.position = PlayerPosition.transform.position;
         RenderSettings.fogColor = Color.black;
-        RenderSettings.fogDensity = FogDensityValue;
         Camera.LookAt = target;
     }
 
     private void NonCorridorAnimation()
     {
         RenderSettings.fogColor = asda;
-        RenderSettings.fogDensity = 0.1f;
         Camera.LookAt = null;
     }
 }
