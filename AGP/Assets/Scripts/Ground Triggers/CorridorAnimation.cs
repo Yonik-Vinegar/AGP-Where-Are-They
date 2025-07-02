@@ -10,21 +10,29 @@ public class CorridorAnimation : MonoBehaviour
     public Transform target;
     public GameObject Player;
     private Color asda;
+    public bool IsforRobot;
 
     private void Start()
     {
-        Color asda = new Color(0.3396226f, 0.08810965f, 08810965f, 1f);
+         asda = new Color(0.3396226f, 0.08810965f, 0.08810965f, 1f);
+         
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            CorridorAnim();
+            if (IsforRobot == false)
+            {
+                CorridorAnim();
+            }
         }
 
         if (other.gameObject.tag == "Robot")
         {
-            NonCorridorAnimation();
+            if (IsforRobot == true)
+            {
+                NonCorridorAnimation();
+            }
         }
     }
 
@@ -34,9 +42,10 @@ public class CorridorAnimation : MonoBehaviour
         RenderSettings.fogColor = Color.black;
         Camera.LookAt = target;
     }
-
+                                
     private void NonCorridorAnimation()
     {
+        Debug.Log("Noncorridor");
         RenderSettings.fogColor = asda;
         Camera.LookAt = null;
     }

@@ -42,7 +42,7 @@ public class Interaction : MonoBehaviour
                 
                 if (hit.collider.TryGetComponent(out DialogueTrigger dialogueTrigger))
                 {
-                    Debug.Log("picking up the robot");
+                   
                     dialogueTrigger.DialogueInteraction();
                    
 
