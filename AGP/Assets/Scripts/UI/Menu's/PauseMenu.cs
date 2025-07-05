@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject PMenu;
+    [SerializeField] private GameObject HeartRateBackGrd;
     [SerializeField] private GameObject HeartRate;
     [SerializeField] private GameObject Crosshair;
     [Header("Input")]
@@ -45,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         inputManager.lockCursor = false;
         HeartRate.SetActive(false);
         Crosshair.SetActive(false);
+        HeartRateBackGrd.SetActive(false);
     }
 
     public void ResumeGame()
@@ -55,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         HeartRate.SetActive(true);
         Crosshair.SetActive(true);
         inputManager.lockCursor = true;
+        HeartRateBackGrd.SetActive(true);
     }
 
     public void QuitGame()
