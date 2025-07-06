@@ -27,6 +27,12 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI HeartRateText;
     public bool PlayerDead;
     public float DecreasePerSecond;
+
+    [Header("HeartBeat UI")]
+    public GameObject HeartRateFine;
+    public GameObject HeartRateCaution;
+    public GameObject HeartRateDanger;
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -38,6 +44,9 @@ public class PlayerManager : MonoBehaviour
         console = CheckConsole.GetComponent<Console>();
         pov.m_HorizontalAxis.m_MaxSpeed = 100;
         pov.m_VerticalAxis.m_MaxSpeed = 100;
+
+        HeartRateCaution.SetActive(false);
+        HeartRateDanger.SetActive(false);
     }
 
     private void Update()
@@ -54,6 +63,27 @@ public class PlayerManager : MonoBehaviour
         if (HeartBeat <= 80f)
         {
             HeartBeat = 80f;
+        }
+
+        if (HeartBeat <= 80f && HeartBeat >= 95f)
+        {
+            HeartRateFine.SetActive(true);
+            HeartRateCaution.SetActive(false);
+            HeartRateDanger.SetActive(false);
+        }
+
+        if (HeartBeat <= 96f && HeartBeat >= 105f)
+        {
+            HeartRateFine.SetActive(false);
+            HeartRateCaution.SetActive(true);
+            HeartRateDanger.SetActive(false );
+        }
+
+        if (HeartBeat <= 106f && HeartBeat > 120f)
+        {
+            HeartRateFine.SetActive(false);
+            HeartRateCaution.SetActive(false);
+            HeartRateDanger .SetActive(true);
         }
     }
 
