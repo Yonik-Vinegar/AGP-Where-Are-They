@@ -14,7 +14,10 @@ public class DialogueManager : MonoBehaviour
     private AudioClip[] dialogueClips;
     private int dialogueIndex;
     private AudioSource audioSource;
-    
+
+    private bool RobotAnimation = false;
+    private bool audioPlaying = false;
+
     public bool dialogueIsPlaying { get; private set; }
     PlayerManager playerManager;
 
@@ -62,6 +65,14 @@ public class DialogueManager : MonoBehaviour
         {
             audioSource.mute = true;
         }
+        if(audioPlaying == true)
+        {
+            if (!audioSource.isPlaying) 
+            {
+                dialogueIndex++;
+            }
+
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
@@ -74,12 +85,25 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    public void EnterCorridorDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
+    {
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        LoadAudioVariables(newDialogueClips);
+        ContinueStory();
+        RobotAnimation = true;
+
+    }
+
     private void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         interaction.ContinueCue.SetActive(false);
         playerManager.LockInputs = false;
+        RobotAnimation = false;
+        audioPlaying = false;
 
     }
 
@@ -91,18 +115,38 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        
-        if (currentStory.canContinue)
+        if (RobotAnimation == false) 
         {
-            dialogueText.text = currentStory.Continue();
-            audioSource.Stop();
-            audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
-            dialogueIndex++;
-        }
-        else
-        {
-            ExitDialogueMode();
+            if (currentStory.canContinue)
+            {
+                dialogueText.text = currentStory.Continue();
+                audioSource.Stop();
+                audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
+                dialogueIndex++;
+                Debug.Log("Does this work?");
+            }
+            else
+            {
+                ExitDialogueMode();
 
+            }
+        }
+
+        if (RobotAnimation == true)
+        {
+            if (currentStory.canContinue)
+            {
+                dialogueText.text = currentStory.Continue();
+                audioSource.Stop();
+                audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
+                dialogueIndex++;
+                audioPlaying = true;
+            }
+            else
+            {
+                ExitDialogueMode();
+
+            }
         }
     }
 }

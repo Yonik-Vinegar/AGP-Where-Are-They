@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 71482454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.028304692, z: -0, w: 0.9995994}
-  m_LocalPosition: {x: -1.91, y: 0.24224, z: -65.91}
+  m_LocalPosition: {x: -2.29, y: 0.24224, z: -64.43}
   m_LocalScale: {x: 1.7778, y: 1.7778, z: 1.7778}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3013,6 +3013,8 @@ MonoBehaviour:
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 71db5fc08b9e4c442b71e740df4293ce, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: 7d00fce2b67c4b342aedef0706134cf2, type: 3}
 --- !u!65 &244513283
 BoxCollider:
@@ -3854,7 +3856,7 @@ PrefabInstance:
     - target: {fileID: 4557337060974216128, guid: b4c1cee98e617ef47b974fe8f958597f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.29
+      value: -0.036
       objectReference: {fileID: 0}
     - target: {fileID: 4557337060974216128, guid: b4c1cee98e617ef47b974fe8f958597f,
         type: 3}
@@ -3864,7 +3866,7 @@ PrefabInstance:
     - target: {fileID: 4557337060974216128, guid: b4c1cee98e617ef47b974fe8f958597f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.29
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4557337060974216128, guid: b4c1cee98e617ef47b974fe8f958597f,
         type: 3}
@@ -6641,6 +6643,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 25f7a6f83b4ef684dbc5f23146ea4b87, type: 3}
   - {fileID: 8300000, guid: d36985c1ab59f4a439f3077e47237b8f, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
 --- !u!65 &477452005
 BoxCollider:
@@ -12192,6 +12196,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4746c0e31c6359346915decf656325a8, type: 3}
   - {fileID: 8300000, guid: 057bb64b518dc534caa99a64d53c5536, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: de306ba38be659a4e8ea392ee6bf33fc, type: 3}
 --- !u!65 &518846242
 BoxCollider:
@@ -19943,6 +19949,7 @@ Transform:
   - {fileID: 1132180130}
   - {fileID: 294683045}
   - {fileID: 1305509162}
+  - {fileID: 1817909755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772311330
@@ -20380,6 +20387,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73f36299dd85cab49a92e4a2d579f9dd, type: 3}
   - {fileID: 8300000, guid: 136ec75332386d349b3c18b2bdde37d6, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: cd96defb8e39f8d428017355cdd6d5bb, type: 3}
 --- !u!65 &814910783
 BoxCollider:
@@ -27024,6 +27033,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5bda729734e9300428ba5ec8481b2e24, type: 3}
   - {fileID: 8300000, guid: 958c05f2b7f234e428e7a94142d5fe36, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: 206ec7bfa755a0b4d92d9d4547e2b456, type: 3}
 --- !u!65 &984828593
 BoxCollider:
@@ -28120,6 +28131,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9905701fa27181a459a7c1f9eedad628, type: 3}
   - {fileID: 8300000, guid: b23a9e4a73a7425499cdf7cd3821ad89, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
 --- !u!65 &1054372466
 BoxCollider:
@@ -28701,12 +28714,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: fa44c2274012fce44a62f309d2b3906d, type: 3}
-  - {fileID: 8300000, guid: 7dc1cabb273dceb41abbbfae6e3a28e6, type: 3}
-  - {fileID: 8300000, guid: 5336b1ee8b0d2944f9ec718de4c0f054, type: 3}
-  - {fileID: 8300000, guid: 0dfb81a525bed214098c22ddd2f824e4, type: 3}
-  - {fileID: 8300000, guid: bef7b0fb0e510f64483a1205b1e3ce4d, type: 3}
+  - {fileID: 8300000, guid: 36b8b2f9a1e96d9458ddfeaafff3c3e0, type: 3}
+  - {fileID: 8300000, guid: 76422cb2f89fef34b950646ea9b8d2fe, type: 3}
+  - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
+  - {fileID: 8300000, guid: 47dfadc658bd49641855948ebd2309a3, type: 3}
+  - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
 --- !u!114 &1096359432
 MonoBehaviour:
@@ -29981,6 +29996,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
   - {fileID: 8300000, guid: 6355326671d782f45ab597cdd6d1fedb, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: e701f43f05014e04699fb3ed85b17ea7, type: 3}
 --- !u!65 &1188799926
 BoxCollider:
@@ -30094,6 +30111,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44775f0fa14ad8841b9d46b66e820ef1, type: 3}
   - {fileID: 8300000, guid: 43b34c60fe9fc2d4b9089850636a58a9, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: 718c94757c18dd742bb9a142a0325913, type: 3}
 --- !u!65 &1191511195
 BoxCollider:
@@ -30500,6 +30519,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 650e6c86d5bc6ab46930c56b248006a9, type: 3}
   - {fileID: 8300000, guid: 044b933a8ef76294287333656033b0c8, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: aa9e4b2df07b9314d911e085cfdc57d5, type: 3}
 --- !u!65 &1283757529
 BoxCollider:
@@ -30667,6 +30688,7 @@ GameObject:
   - component: {fileID: 1305509162}
   - component: {fileID: 1305509164}
   - component: {fileID: 1305509163}
+  - component: {fileID: 1305509165}
   m_Layer: 0
   m_Name: Robot Trigger
   m_TagString: Untagged
@@ -30727,6 +30749,26 @@ MonoBehaviour:
   target: {fileID: 0}
   Player: {fileID: 0}
   IsforRobot: 1
+--- !u!114 &1305509165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305509161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8fc32c5dbb788428c4a984e44ead9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  grdDialogueAudioClips:
+  - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
+  - {fileID: 8300000, guid: 682a285fb263cbd4da15257341eee160, type: 3}
+  ToggleInputs: 0
+  CorridorAnimation: 1
+  FinalRobotCorridorTrigger: 0
+  inkJSON: {fileID: 4900000, guid: 72411e05ac1c44c46a01d1c4bc06022a, type: 3}
 --- !u!1 &1310322734
 GameObject:
   m_ObjectHideFlags: 0
@@ -33991,7 +34033,7 @@ Transform:
   m_GameObject: {fileID: 1617208424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -820.819, y: -528.04553, z: -25.29875}
+  m_LocalPosition: {x: -815.2, y: -528.04553, z: -20.74}
   m_LocalScale: {x: 1.5857848, y: 1.5857848, z: 1.5857848}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34871,7 +34913,7 @@ Transform:
   m_GameObject: {fileID: 1712492296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16418724, y: 0.6278316, z: -0.13775937, w: -0.74825966}
-  m_LocalPosition: {x: -850.8146, y: -526.7342, z: 25.124987}
+  m_LocalPosition: {x: -851.1946, y: -526.7342, z: 26.60499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36133,7 +36175,7 @@ Transform:
   m_GameObject: {fileID: 1804824132}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -867.36896, y: -528.04553, z: -15.29875}
+  m_LocalPosition: {x: -867.3, y: -528.04553, z: -15.29875}
   m_LocalScale: {x: 1.5857848, y: 1.5857848, z: 1.5857848}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36318,6 +36360,97 @@ Transform:
   - {fileID: 969284696}
   m_Father: {fileID: 1930484999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1817909754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817909755}
+  - component: {fileID: 1817909758}
+  - component: {fileID: 1817909757}
+  - component: {fileID: 1817909756}
+  m_Layer: 0
+  m_Name: Robot Trigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817909755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817909754}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.38, y: -2.25, z: -0.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 764902596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817909756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817909754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8fc32c5dbb788428c4a984e44ead9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  grdDialogueAudioClips:
+  - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
+  ToggleInputs: 0
+  CorridorAnimation: 1
+  FinalRobotCorridorTrigger: 0
+  inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
+--- !u!65 &1817909757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817909754}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9182081, y: 1.420894, z: 6.7381134}
+  m_Center: {x: -0.052662373, y: -0.07093471, z: -0.29686356}
+--- !u!114 &1817909758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817909754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0254d9dcf6b6bb419ac6344266486cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPosition: {fileID: 0}
+  Camera: {fileID: 0}
+  target: {fileID: 0}
+  Player: {fileID: 0}
+  IsforRobot: 1
 --- !u!1 &1819722711
 GameObject:
   m_ObjectHideFlags: 0
@@ -37993,8 +38126,8 @@ Transform:
   m_GameObject: {fileID: 1991179811}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.05, y: -2.05, z: -27.19}
-  m_LocalScale: {x: 12.5251045, y: 2.125144, z: 4.204762}
+  m_LocalPosition: {x: -21.05, y: -2.05, z: -27.71}
+  m_LocalScale: {x: 11.489311, y: 2.125144, z: 4.204762}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 92360016}
@@ -38035,6 +38168,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 029c942c48db3bb42b1736372c697e41, type: 3}
   - {fileID: 8300000, guid: 05063a5c2f41c4648ad0d75ee4a4f0f0, type: 3}
   ToggleInputs: 0
+  CorridorAnimation: 0
+  FinalRobotCorridorTrigger: 0
   inkJSON: {fileID: 4900000, guid: a5c091ad8c72f0a4597ad2adbfb39995, type: 3}
 --- !u!65 &1991179815
 BoxCollider:
@@ -38248,7 +38383,7 @@ Transform:
   m_GameObject: {fileID: 2025670107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -806.459, y: -528.04553, z: -32.07875}
+  m_LocalPosition: {x: -806.459, y: -528.04553, z: -30.76}
   m_LocalScale: {x: 1.5857848, y: 1.5857848, z: 1.5857848}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38411,8 +38546,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049740211}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.22, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.07, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

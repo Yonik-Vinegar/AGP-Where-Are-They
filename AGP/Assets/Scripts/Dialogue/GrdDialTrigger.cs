@@ -7,10 +7,13 @@ public class GrdDialTrigger : MonoBehaviour
     //Code is a modified script from https://www.youtube.com/watch?v=vY0Sk93YUhA&list=PLkz5NgoW6xcWtxugVBcK58aIHpxyjjCSE&index=3
     PlayerManager playerManager;
     private bool PlayerInRange;
+    private bool RobotInRange;
     Interaction interaction;
     public GameObject Player;
     [SerializeField] private AudioClip[] grdDialogueAudioClips;
     public bool ToggleInputs;
+    public bool CorridorAnimation;
+    public bool FinalRobotCorridorTrigger;
 
     [Header("Ink Json")]
     [SerializeField] private TextAsset inkJSON;
@@ -28,14 +31,30 @@ public class GrdDialTrigger : MonoBehaviour
                 
                 if (!DialogueManager.GetInstance().dialogueIsPlaying)
                 {
-                    if (PlayerInRange == true && playerManager.PlayerDead == false)
+                    if (CorridorAnimation == false)
                     {
-                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
-                        Debug.Log("DialogueTriggered");
-                    Destroy(gameObject);
-                    interaction.ContinueCue.SetActive(true);
-                   
+                        if (PlayerInRange == true && playerManager.PlayerDead == false)
+                        {
+                            DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
+                            Debug.Log("DialogueTriggered");
+                            Destroy(gameObject);
+                            interaction.ContinueCue.SetActive(true);
+
+                        }
                     }
+
+                    if (CorridorAnimation == true)
+                    {
+                        if (RobotInRange == true && playerManager.PlayerDead == false)
+                        {
+                        DialogueManager.GetInstance().EnterCorridorDialogueMode(inkJSON, grdDialogueAudioClips);
+                        Debug.Log("DialogueTriggered");
+                        Destroy(gameObject);
+                        interaction.ContinueCue.SetActive(true);
+                        }
+                    }
+
+                   
 
                 }
             
@@ -59,10 +78,37 @@ public class GrdDialTrigger : MonoBehaviour
 
             }
         }
+
+        if (collider.gameObject.tag == "Robot")
+        {
+            if (CorridorAnimation == true)
+            {
+                playerManager.LockInputs = ToggleInputs;
+                RobotInRange = true;
+            }
+
+            else
+            {
+                RobotInRange = false;
+            }
+
+            if (FinalRobotCorridorTrigger == true)
+            {
+                playerManager.LockInputs = ToggleInputs;
+                PlayerInRange = true;
+            }
+            else
+            {
+                PlayerInRange= false;
+            }
+
+        }
+
     }
 
     private void OnTriggerExit(Collider collider)
     {
         PlayerInRange = false;
+        RobotInRange= false;
     }
 }

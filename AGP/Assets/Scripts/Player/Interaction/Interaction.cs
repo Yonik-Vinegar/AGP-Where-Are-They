@@ -85,7 +85,6 @@ public class Interaction : MonoBehaviour
         if (inputManager.ContinuePressed == true)
         {
             GroundContinueDialogue = true;
-            Debug.Log("is this continously saying yes");
 
         }
         else { GroundContinueDialogue = false; }
