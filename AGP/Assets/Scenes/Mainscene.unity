@@ -28714,11 +28714,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 36b8b2f9a1e96d9458ddfeaafff3c3e0, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: 76422cb2f89fef34b950646ea9b8d2fe, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
-  - {fileID: 8300000, guid: 47dfadc658bd49641855948ebd2309a3, type: 3}
-  - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
+  - {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
