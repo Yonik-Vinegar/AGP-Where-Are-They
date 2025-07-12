@@ -9,6 +9,9 @@ public class GroundTriggers : MonoBehaviour
     public int HeartBeatDec;
     PlayerManager playerManager;
     public GameObject Player;
+
+    [Header("Area bools")]
+    public bool IsVents;
     private void Awake()
     {
         playerManager = Player.GetComponent<PlayerManager> ();
@@ -22,6 +25,8 @@ public class GroundTriggers : MonoBehaviour
             playerManager.HeartBeat = playerManager.HeartBeat - HeartBeatDec;
             eventAnimator.SetTrigger("EventTrigger");
             Debug.Log(playerManager.HeartBeat);
+
+
         }
     }
 
