@@ -16,6 +16,7 @@ TagManager:
   - PuzzleCheckPos
   - Slope
   - Console
+  - Map
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Map
   - 
   - 
   - 
