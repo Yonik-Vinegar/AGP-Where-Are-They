@@ -2576,7 +2576,7 @@ MonoBehaviour:
   GameOverScreen: {fileID: 1097259731}
   BaseUI: {fileID: 1457503655}
   GameActive: 1
-  SFX: {fileID: 8300000, guid: 50b433d60cde8844b9c95a3be3d370f2, type: 3}
+  SFX: {fileID: 8300000, guid: 8a2d5bb26b5f8654e8cfb7e7aa1d1931, type: 3}
 --- !u!65 &200244149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3219,9 +3219,11 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 71db5fc08b9e4c442b71e740df4293ce, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 7d00fce2b67c4b342aedef0706134cf2, type: 3}
 --- !u!65 &244513283
 BoxCollider:
@@ -4426,7 +4428,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.028304692, z: 0, w: 0.9995994}
-  m_LocalPosition: {x: 1.164, y: 0.714, z: 41.898003}
+  m_LocalPosition: {x: 1.2799999, y: 0.714, z: 43.560005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5621,11 +5623,12 @@ Transform:
   m_GameObject: {fileID: 421576564}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.164, y: 0, z: 41.898}
+  m_LocalPosition: {x: 1.28, y: 0, z: 43.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1600745115}
+  - {fileID: 1338914644}
   m_Father: {fileID: 71482456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &421576569
@@ -6782,9 +6785,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb0258dd363a99447aeead7a068c32a1, type: 3}
   - {fileID: 8300000, guid: 25f7a6f83b4ef684dbc5f23146ea4b87, type: 3}
   - {fileID: 8300000, guid: d36985c1ab59f4a439f3077e47237b8f, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
 --- !u!65 &477452005
 BoxCollider:
@@ -12180,9 +12185,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58b62b62267026749bd6052291d54967, type: 3}
   - {fileID: 8300000, guid: 4746c0e31c6359346915decf656325a8, type: 3}
   - {fileID: 8300000, guid: 057bb64b518dc534caa99a64d53c5536, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: de306ba38be659a4e8ea392ee6bf33fc, type: 3}
 --- !u!65 &518846242
 BoxCollider:
@@ -20455,9 +20462,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3cff43fd514b75d4cba29aab10231837, type: 3}
   - {fileID: 8300000, guid: 73f36299dd85cab49a92e4a2d579f9dd, type: 3}
   - {fileID: 8300000, guid: 136ec75332386d349b3c18b2bdde37d6, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: cd96defb8e39f8d428017355cdd6d5bb, type: 3}
 --- !u!65 &814910783
 BoxCollider:
@@ -26971,9 +26980,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 10565b9a150143247bd709674945e7f4, type: 3}
   - {fileID: 8300000, guid: 5bda729734e9300428ba5ec8481b2e24, type: 3}
   - {fileID: 8300000, guid: 958c05f2b7f234e428e7a94142d5fe36, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 206ec7bfa755a0b4d92d9d4547e2b456, type: 3}
 --- !u!65 &984828593
 BoxCollider:
@@ -28076,9 +28087,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bae85569be537f142a3209bd3f78bdba, type: 3}
   - {fileID: 8300000, guid: 9905701fa27181a459a7c1f9eedad628, type: 3}
   - {fileID: 8300000, guid: b23a9e4a73a7425499cdf7cd3821ad89, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
 --- !u!65 &1054372466
 BoxCollider:
@@ -28638,9 +28651,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
   - {fileID: 0}
+  SFX: {fileID: 8300000, guid: 50b433d60cde8844b9c95a3be3d370f2, type: 3}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
 --- !u!114 &1096359432
 MonoBehaviour:
@@ -29916,9 +29931,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 30015b25d073df14ab0f6ffe0ab97583, type: 3}
   - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
   - {fileID: 8300000, guid: 6355326671d782f45ab597cdd6d1fedb, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: e701f43f05014e04699fb3ed85b17ea7, type: 3}
 --- !u!65 &1188799926
 BoxCollider:
@@ -30032,9 +30049,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e0990501715f74f45a78e6353425b92c, type: 3}
   - {fileID: 8300000, guid: 44775f0fa14ad8841b9d46b66e820ef1, type: 3}
   - {fileID: 8300000, guid: 43b34c60fe9fc2d4b9089850636a58a9, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 718c94757c18dd742bb9a142a0325913, type: 3}
 --- !u!65 &1191511195
 BoxCollider:
@@ -30441,9 +30460,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eed389a5dea7b734086d52dcb9e29e5f, type: 3}
   - {fileID: 8300000, guid: 650e6c86d5bc6ab46930c56b248006a9, type: 3}
   - {fileID: 8300000, guid: 044b933a8ef76294287333656033b0c8, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: aa9e4b2df07b9314d911e085cfdc57d5, type: 3}
 --- !u!65 &1283757529
 BoxCollider:
@@ -30688,9 +30709,11 @@ MonoBehaviour:
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
   - {fileID: 8300000, guid: 682a285fb263cbd4da15257341eee160, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 1
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 72411e05ac1c44c46a01d1c4bc06022a, type: 3}
 --- !u!1 &1310322734
 GameObject:
@@ -30819,6 +30842,135 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310322734}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1338914643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1338914644}
+  - component: {fileID: 1338914645}
+  m_Layer: 6
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1338914644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338914643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 421576568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1338914645
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338914643}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -548266516938871514, guid: 0c111147384f5634bbc9aca1e4b96034,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1339351923
 GameObject:
   m_ObjectHideFlags: 0
@@ -34836,7 +34988,7 @@ Transform:
   m_GameObject: {fileID: 1712492296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16418724, y: 0.6278316, z: -0.13775937, w: -0.74825966}
-  m_LocalPosition: {x: -850.7121, y: -526.7126, z: 22.156351}
+  m_LocalPosition: {x: -850.67944, y: -526.7126, z: 24.655207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36332,9 +36484,11 @@ MonoBehaviour:
   Player: {fileID: 0}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 1
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
 --- !u!65 &1817909757
 BoxCollider:
@@ -38083,9 +38237,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 60e74ba428bceab4a85fb086d081e788, type: 3}
   - {fileID: 8300000, guid: 029c942c48db3bb42b1736372c697e41, type: 3}
   - {fileID: 8300000, guid: 05063a5c2f41c4648ad0d75ee4a4f0f0, type: 3}
+  SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
   FinalRobotCorridorTrigger: 0
+  SFXObject: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: a5c091ad8c72f0a4597ad2adbfb39995, type: 3}
 --- !u!65 &1991179815
 BoxCollider:
@@ -39793,6 +39949,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713270523246057481, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a2d5bb26b5f8654e8cfb7e7aa1d1931, type: 3}
     - target: {fileID: 4713270523246057481, guid: a9aaeb008b43a764183a09db6fe62115,
         type: 3}
       propertyPath: BaseUI
