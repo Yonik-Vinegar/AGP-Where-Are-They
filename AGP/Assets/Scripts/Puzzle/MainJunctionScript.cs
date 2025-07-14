@@ -11,21 +11,33 @@ public class MainJunctionScript : MonoBehaviour
     [SerializeField] private bool firstJunction;
     private Quaternion targetRotation;
     private float turnSpeed = 5;
-    // Update is called once per frame
+
+    [Header("Changing Materials")]
+    public Material[] materials;
+    public renderer PipesRenderer;
+    public Gameobject[] Pipes;
     [Header("SFX")]
     private AudioSource audioSource;
     public GameObject SFXObject;
     [SerializeField] private AudioClip SFX;
+
     private void Awake()
     {
         targetRotation = transform.rotation;
         audioSource = SFXObject.GetComponent<AudioSource>();
+        PipesRenderer = Pipes[].GetComponents<PipesRenderer>();
     }
     void Update()
     {
         CheckPreviousJunction();
         CheckTriggers();
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+
+        if (IsCharged)
+        {
+            Renderer rend;
+
+        }
     }
 
 
