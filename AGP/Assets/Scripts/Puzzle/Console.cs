@@ -20,8 +20,11 @@ public class Console : MonoBehaviour
     public bool GameActive = true;
 
     [Header("Sound Effects for all consoles")]
+    [SerializeField] private AudioClip EndSFX;
     [SerializeField] private AudioClip SFX;
     private AudioSource audioSource;
+    public GameObject SFXObject;
+    private bool SFXactivated;
     private void Start()
     {
         rend = GetComponent<Renderer>();
@@ -29,7 +32,7 @@ public class Console : MonoBehaviour
         rend.sharedMaterial = materials[0];
         inputManager = Player.GetComponent<InputManager>();
         GameOverScreen.SetActive(false);
-        audioSource = Player.GetComponent<AudioSource>();
+        audioSource = SFXObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -38,6 +41,13 @@ public class Console : MonoBehaviour
         {
             rend.sharedMaterial = materials[1];
             CanActivate = true;
+            if (SFXactivated == false)
+            {
+                audioSource.PlayOneShot(SFX);
+                SFXactivated = true;
+            }
+            
+            //put the SFX sound here for the computer charging up. The audio for doors opening will be put on the doors itself.
         }
         else
         {
@@ -65,8 +75,9 @@ public class Console : MonoBehaviour
             GameOverScreen.SetActive(true);
             BaseUI.SetActive(false);
             Time.timeScale = 0;
-            audioSource.PlayOneShot(SFX);
+            audioSource.PlayOneShot(EndSFX);
             GameActive = false;
         }
     }
+
 }

@@ -32,7 +32,14 @@ public class PlayerManager : MonoBehaviour
     public GameObject HeartRateFine;
     public GameObject HeartRateCaution;
     public GameObject HeartRateDanger;
-    
+    [Header("HeartBeat SFX")]
+    private AudioSource audioSource;
+    public GameObject SFXObject;
+    [SerializeField] private AudioClip FineHeartbeat;
+    [SerializeField] private AudioClip CautionHeartbeat;
+    [SerializeField] private AudioClip DangerHeartbeat;
+    [SerializeField] private AudioClip Flatline;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -47,6 +54,8 @@ public class PlayerManager : MonoBehaviour
 
         HeartRateCaution.SetActive(false);
         HeartRateDanger.SetActive(false);
+
+        audioSource = SFXObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,6 +79,7 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(true);
             HeartRateCaution.SetActive(false);
             HeartRateDanger.SetActive(false);
+            audioSource.PlayOneShot(FineHeartbeat);
         }
 
         if (HeartBeat <= 96f && HeartBeat >= 105f)
@@ -77,6 +87,7 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(true);
             HeartRateDanger.SetActive(false );
+            audioSource.PlayOneShot(CautionHeartbeat);
         }
 
         if (HeartBeat <= 106f && HeartBeat > 120f)
@@ -84,6 +95,7 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(false);
             HeartRateDanger .SetActive(true);
+            audioSource.PlayOneShot(DangerHeartbeat);
         }
     }
 

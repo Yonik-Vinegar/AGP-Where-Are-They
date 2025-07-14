@@ -12,10 +12,14 @@ public class MainJunctionScript : MonoBehaviour
     private Quaternion targetRotation;
     private float turnSpeed = 5;
     // Update is called once per frame
-
+    [Header("SFX")]
+    private AudioSource audioSource;
+    public GameObject SFXObject;
+    [SerializeField] private AudioClip SFX;
     private void Awake()
     {
         targetRotation = transform.rotation;
+        audioSource = SFXObject.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -62,6 +66,7 @@ public class MainJunctionScript : MonoBehaviour
         if (IsCharged == false)
         {
             targetRotation *= Quaternion.AngleAxis(90, Vector3.forward);
+            audioSource.PlayOneShot(SFX);
         }
 
     }

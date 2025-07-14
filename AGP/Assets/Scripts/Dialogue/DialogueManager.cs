@@ -85,6 +85,16 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    public void EnterConsoleDialogueMode(TextAsset UnsolvedJSON, AudioClip[] newDialogueClips)
+    {
+        currentStory = new Story(UnsolvedJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        LoadAudioVariables(newDialogueClips);
+        ContinueStory();
+
+    }
+
     public void EnterCorridorDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
     {
         currentStory = new Story(inkJSON.text);

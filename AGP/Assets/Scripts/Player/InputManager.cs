@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour
     public GameObject GameManager;
     PauseMenu pauseMenu;
 
+    public AudioSource audioSource;
+    private bool MovementPerformed;
+
     private void Start()
     {
         consoleScript = FinalConsole.GetComponent<Console>();
@@ -67,6 +70,15 @@ public class InputManager : MonoBehaviour
         cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
 
+        if (movementInput.x > 0 ||  movementInput.y > 0 || movementInput.x < 0 || movementInput.y < 0)
+        {
+            MovementPerformed = true;
+        }
+        else
+        {
+            MovementPerformed = false;
+
+        }
 
     }
 
@@ -85,6 +97,15 @@ public class InputManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+
+        if (MovementPerformed == true)
+        {
+            audioSource.enabled = true;
+        }
+        else
+        {
+            audioSource.enabled = false;
         }
     }
 
