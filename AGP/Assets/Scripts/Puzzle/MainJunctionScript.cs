@@ -14,8 +14,8 @@ public class MainJunctionScript : MonoBehaviour
 
     [Header("Changing Materials")]
     public Material[] materials;
-    public renderer PipesRenderer;
-    public Gameobject[] Pipes;
+    Renderer rend;
+    public GameObject MeshRenderer;
     [Header("SFX")]
     private AudioSource audioSource;
     public GameObject SFXObject;
@@ -23,9 +23,12 @@ public class MainJunctionScript : MonoBehaviour
 
     private void Awake()
     {
+        rend = MeshRenderer.GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = materials[0];
         targetRotation = transform.rotation;
         audioSource = SFXObject.GetComponent<AudioSource>();
-        PipesRenderer = Pipes[].GetComponents<PipesRenderer>();
+
     }
     void Update()
     {
@@ -33,10 +36,13 @@ public class MainJunctionScript : MonoBehaviour
         CheckTriggers();
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
 
-        if (IsCharged)
+        if (IsCharged == true)
         {
-            Renderer rend;
-
+            rend.sharedMaterial = materials[1];
+        }
+        else
+        {
+            rend.sharedMaterial = materials[0];
         }
     }
 
@@ -57,6 +63,7 @@ public class MainJunctionScript : MonoBehaviour
     {
         if (previousCharged)
         {
+
             IsCharged = true;
             foreach (bool triggerBool in triggerBools)
             {
@@ -70,6 +77,7 @@ public class MainJunctionScript : MonoBehaviour
         else
         {
             IsCharged = false;
+
         }
     }
 
@@ -80,7 +88,6 @@ public class MainJunctionScript : MonoBehaviour
             targetRotation *= Quaternion.AngleAxis(90, Vector3.forward);
             audioSource.PlayOneShot(SFX);
         }
-
     }
     public void Interact()
     {
