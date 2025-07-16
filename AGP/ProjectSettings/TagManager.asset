@@ -17,6 +17,7 @@ TagManager:
   - Slope
   - Console
   - Map
+  - Upslope
   layers:
   - Default
   - TransparentFX

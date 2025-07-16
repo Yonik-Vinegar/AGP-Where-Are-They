@@ -39,6 +39,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private AudioClip CautionHeartbeat;
     [SerializeField] private AudioClip DangerHeartbeat;
     [SerializeField] private AudioClip Flatline;
+    private bool FineHeart = false;
+    private bool CautionHeart = false; 
+    private bool DangerHeart = false;   
 
     // Start is called before the first frame update
     private void Awake()
@@ -74,28 +77,37 @@ public class PlayerManager : MonoBehaviour
             HeartBeat = 80f;
         }
 
-        if (HeartBeat <= 80f && HeartBeat >= 95f)
+        if (HeartBeat >= 80f && HeartBeat <= 95f && FineHeart == false)
         {
             HeartRateFine.SetActive(true);
             HeartRateCaution.SetActive(false);
             HeartRateDanger.SetActive(false);
             audioSource.PlayOneShot(FineHeartbeat);
+            FineHeart = true;
+            CautionHeart = false;
+            DangerHeart = false;
         }
 
-        if (HeartBeat <= 96f && HeartBeat >= 105f)
+        if (HeartBeat >= 96f && HeartBeat <= 105f && CautionHeart == false)
         {
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(true);
             HeartRateDanger.SetActive(false );
             audioSource.PlayOneShot(CautionHeartbeat);
+            CautionHeart = true;
+            FineHeart = false;
+            DangerHeart = false;
         }
 
-        if (HeartBeat <= 106f && HeartBeat > 120f)
+        if (HeartBeat >= 106f && HeartBeat < 120f && DangerHeart == false)
         {
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(false);
             HeartRateDanger .SetActive(true);
             audioSource.PlayOneShot(DangerHeartbeat);
+            DangerHeart = true;
+            FineHeart = false;
+            CautionHeart = false;
         }
     }
 

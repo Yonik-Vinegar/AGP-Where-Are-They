@@ -173,6 +173,6 @@ MonoBehaviour:
   IsRobot: 0
   isConsole: 0
   HasbeenSolved: 0
-  UnsolvedJSON: {fileID: 0}
+  UnsolvedJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
   UnsolvedAudioClips: []
   RobotAnim: {fileID: 0}
