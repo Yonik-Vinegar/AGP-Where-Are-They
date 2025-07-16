@@ -115,8 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousJunction: {fileID: 0}
   materials:
-  - {fileID: 2100000, guid: 8e61ffb61f9ce5d47b9c9060edcbc824, type: 2}
-  - {fileID: 2100000, guid: 93342c0eb9f15d142ab581bb33709411, type: 2}
+  - {fileID: 2100000, guid: db09ecb6b25bb7048ac7fd7b55260e84, type: 2}
+  - {fileID: 2100000, guid: ba9e4da9a7395684487adab3fc668a5a, type: 2}
   mAnimator: {fileID: 0}
   CanActivate: 0
   EndingTrigger: 0
@@ -124,7 +124,9 @@ MonoBehaviour:
   GameOverScreen: {fileID: 0}
   BaseUI: {fileID: 0}
   GameActive: 1
+  EndSFX: {fileID: 0}
   SFX: {fileID: 0}
+  SFXObject: {fileID: 0}
 --- !u!65 &7169043674487116366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -169,4 +171,8 @@ MonoBehaviour:
   GroundContinueDialogue: 0
   LockInputs: 0
   IsRobot: 0
+  isConsole: 0
+  HasbeenSolved: 0
+  UnsolvedJSON: {fileID: 0}
+  UnsolvedAudioClips: []
   RobotAnim: {fileID: 0}
