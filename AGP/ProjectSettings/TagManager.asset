@@ -18,6 +18,8 @@ TagManager:
   - Console
   - Map
   - Upslope
+  - SoundSettings
+  - Pause
   layers:
   - Default
   - TransparentFX

@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public GameObject SoundMenu;
 
+    void Start()
+    {
+
+    }
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Mainscene");
         Debug.Log("UI sucks");
     }
 
@@ -18,4 +23,7 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+
+
 }

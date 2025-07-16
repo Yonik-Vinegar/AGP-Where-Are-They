@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,12 +14,35 @@ public class PauseMenu : MonoBehaviour
     InputManager inputManager;
     public GameObject Player;
     public bool isPaused;
+    public GameObject soundMenu;
+    public Button soundButton;
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        
+    }
+
+    public void ShowSettings()
+    {
+        if (soundMenu != null)
+        {
+            soundMenu.SetActive(true);
+
+        }
+        else
+        {
+            soundMenu = GameObject.Find("Pause Menu Canvas");
+            soundMenu.SetActive(true);
+        }
+    }
+
     void Start()
     {
         PMenu.SetActive(false);
         inputManager = Player.GetComponent<InputManager>();
+
+        //soundButton.onClick.AddListener(ShowSettings);
     }
 
     // Update is called once per frame
@@ -63,5 +87,11 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Sound()
+    {
+        soundMenu = FindObjectOfType<SoundController>().SoundMenu;
+        soundMenu?.SetActive(true);
     }
 }
