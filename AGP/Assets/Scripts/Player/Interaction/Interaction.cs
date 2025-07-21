@@ -18,7 +18,6 @@ public class Interaction : MonoBehaviour
 
     [Header("Visual Cue")]
      public GameObject KeyCue;
-     public GameObject ContinueCue;
     //[Header("Deciding which interaction to follow")]
     //[SerializeField] private GameObject[] junction;
 
@@ -26,7 +25,6 @@ public class Interaction : MonoBehaviour
     {
         inputManager = GetComponent<InputManager>();
         KeyCue.SetActive(false);
-        ContinueCue.SetActive(false);
     }
     // Update is called once per frame
     private void Update()
@@ -95,7 +93,6 @@ public class Interaction : MonoBehaviour
         if (inputManager.ContinuePressed == true)
         {
             ContinueDialogueTriggered = true;
-            ContinueCue.SetActive(true);
         }
         else { ContinueDialogueTriggered = false; }
     }

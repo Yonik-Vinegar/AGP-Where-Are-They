@@ -75,7 +75,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueInteractionTriggered = true;
             interaction.KeyCue.SetActive(false);
-            interaction.ContinueCue.SetActive(true);
             playerManager.LockInputs = LockInputs;
             if (IsRobot)
             {

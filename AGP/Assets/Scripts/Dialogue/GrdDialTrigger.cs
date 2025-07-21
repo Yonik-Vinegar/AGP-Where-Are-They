@@ -8,13 +8,13 @@ public class GrdDialTrigger : MonoBehaviour
     PlayerManager playerManager;
     private bool PlayerInRange;
     private bool RobotInRange;
-    Interaction interaction;
     public GameObject Player;
     [SerializeField] private AudioClip[] grdDialogueAudioClips;
     [SerializeField] private AudioClip SFX;
     public bool ToggleInputs;
     public bool CorridorAnimation;
     public bool FinalRobotCorridorTrigger;
+    public GameObject Robot;
 
     private AudioSource SFXaudioSource;
     public GameObject SFXObject;
@@ -25,7 +25,6 @@ public class GrdDialTrigger : MonoBehaviour
     {
         PlayerInRange = false;
         Player = GameObject.Find("PlayerManager/Player");
-        interaction = Player.GetComponent<Interaction>();
         playerManager = Player.GetComponent<PlayerManager>();
         SFXaudioSource = SFXObject.GetComponent<AudioSource>();
     }
@@ -43,7 +42,7 @@ public class GrdDialTrigger : MonoBehaviour
                             DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                             Debug.Log("DialogueTriggered");
                             Destroy(gameObject);
-                            interaction.ContinueCue.SetActive(true);
+
                             SFXaudioSource.PlayOneShot(SFX);
                         }
                     }
@@ -55,7 +54,7 @@ public class GrdDialTrigger : MonoBehaviour
                         DialogueManager.GetInstance().EnterCorridorDialogueMode(inkJSON, grdDialogueAudioClips);
                         Debug.Log("DialogueTriggered");
                         Destroy(gameObject);
-                        interaction.ContinueCue.SetActive(true);
+
                         }
                     }
 

@@ -3,18 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
     public AudioMixer masterMixer;
     public GameObject SoundMenu;
-
+    public GameObject PauseMenu;
+    public bool IsGameScene;
 
     void Awake()
     {
         DontDestroyOnLoad (this.gameObject);
         DontDestroyOnLoad(SoundMenu);
         SoundMenu.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if (IsGameScene == true)
+        {
+            PauseMenu = FindObjectOfType<PauseMenu>().PMenu;
+        }
+        else
+        {
+            PauseMenu = null;
+        }
     }
 
     public void SetDialoguelvl(float lvl)
@@ -38,11 +52,16 @@ public class SoundController : MonoBehaviour
 
     public void ExitSound()
     {
+        if (IsGameScene == true)
+        {
+            PauseMenu.SetActive(true);
+        }
         SoundMenu.SetActive(false);
     }
 
     public void Sound()
     {
+
         SoundMenu?.SetActive(true);
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private GameObject PMenu;
+    public GameObject PMenu;
     [SerializeField] private GameObject HeartRateBackGrd;
     [SerializeField] private GameObject HeartRate;
     [SerializeField] private GameObject Crosshair;
@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused;
     public GameObject soundMenu;
     public Button soundButton;
+    SoundController soundController;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,26 +24,12 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    public void ShowSettings()
-    {
-        if (soundMenu != null)
-        {
-            soundMenu.SetActive(true);
-
-        }
-        else
-        {
-            soundMenu = GameObject.Find("Pause Menu Canvas");
-            soundMenu.SetActive(true);
-        }
-    }
 
     void Start()
     {
         PMenu.SetActive(false);
         inputManager = Player.GetComponent<InputManager>();
 
-        //soundButton.onClick.AddListener(ShowSettings);
     }
 
     // Update is called once per frame
@@ -93,5 +80,8 @@ public class PauseMenu : MonoBehaviour
     {
         soundMenu = FindObjectOfType<SoundController>().SoundMenu;
         soundMenu?.SetActive(true);
+        PMenu.SetActive(false);
+        soundController = soundMenu.GetComponent<SoundController>();
+        soundController.IsGameScene = true;
     }
 }

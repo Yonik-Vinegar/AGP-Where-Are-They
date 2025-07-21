@@ -529,7 +529,9 @@ MonoBehaviour:
   IsCharged: 0
   triggerBools: 000000
   firstJunction: 0
-  materials: []
+  materials:
+  - {fileID: 0}
+  - {fileID: 0}
   MeshRenderer: {fileID: 0}
   SFXObject: {fileID: 0}
   SFX: {fileID: 0}
