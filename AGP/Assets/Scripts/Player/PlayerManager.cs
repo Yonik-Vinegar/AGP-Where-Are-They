@@ -113,6 +113,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(LockInputs);
         if (LockInputs == false)
         {
             pov.m_HorizontalAxis.m_MaxSpeed = 100;
@@ -121,8 +122,8 @@ public class PlayerManager : MonoBehaviour
         }
         else if (LockInputs == true)
         {
-            pov.m_HorizontalAxis.m_MaxSpeed = 0;
-            pov.m_VerticalAxis.m_MaxSpeed = 0;
+            pov.m_HorizontalAxis.m_MaxSpeed = -1;
+            pov.m_VerticalAxis.m_MaxSpeed = -1;
         }
     }
 

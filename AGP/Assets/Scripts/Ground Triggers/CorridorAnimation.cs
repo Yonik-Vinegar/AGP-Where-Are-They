@@ -38,7 +38,8 @@ public class CorridorAnimation : MonoBehaviour
 
     private void CorridorAnim()
     {
-        Player.transform.position = PlayerPosition.transform.position;
+        Debug.Log("Is corridor Anim being called?");
+        //Player.transform.position = PlayerPosition.transform.position;
         RenderSettings.fogColor = Color.black;
         Camera.LookAt = target;
     }

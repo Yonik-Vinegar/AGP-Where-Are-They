@@ -15,6 +15,7 @@ public class GrdDialTrigger : MonoBehaviour
     public bool CorridorAnimation;
     public bool FinalRobotCorridorTrigger;
     public GameObject Robot;
+    PlayerLocomation playerLocomation;
 
     private AudioSource SFXaudioSource;
     public GameObject SFXObject;
@@ -24,15 +25,15 @@ public class GrdDialTrigger : MonoBehaviour
     private void Awake()
     {
         PlayerInRange = false;
+        RobotInRange = false;
         Player = GameObject.Find("PlayerManager/Player");
         playerManager = Player.GetComponent<PlayerManager>();
         SFXaudioSource = SFXObject.GetComponent<AudioSource>();
+        playerLocomation = Player.GetComponent<PlayerLocomation>();
     }
 
     private void Update()
     {
-        {
-                
                 if (!DialogueManager.GetInstance().dialogueIsPlaying)
                 {
                     if (CorridorAnimation == false)
@@ -57,23 +58,22 @@ public class GrdDialTrigger : MonoBehaviour
 
                         }
                     }
-
-                   
-
                 }
-            
 
-
-        }
+                if (RobotInRange == true)
+                {
+                    playerManager.LockInputs = ToggleInputs;
+                    playerLocomation.movementSpeed = 0f;
+                }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
         {
-            if (playerManager.PlayerDead == false)
+            if (playerManager.PlayerDead == false && CorridorAnimation == false && FinalRobotCorridorTrigger == false)
             {
-                playerManager.LockInputs = ToggleInputs;
+                
                 PlayerInRange = true;
             }
             else
@@ -81,13 +81,10 @@ public class GrdDialTrigger : MonoBehaviour
                 PlayerInRange = false;
 
             }
-        }
 
-        if (collider.gameObject.tag == "Robot")
-        {
-            if (CorridorAnimation == true)
+            if (CorridorAnimation == true && playerManager.PlayerDead == false)
             {
-                playerManager.LockInputs = ToggleInputs;
+                Debug.Log("TriggeredCorridorAnim");
                 RobotInRange = true;
             }
 
@@ -95,9 +92,14 @@ public class GrdDialTrigger : MonoBehaviour
             {
                 RobotInRange = false;
             }
+        }
+
+        if (collider.gameObject.tag == "Robot")
+        {
 
             if (FinalRobotCorridorTrigger == true)
             {
+                playerLocomation.movementSpeed = 7f;
                 playerManager.LockInputs = ToggleInputs;
                 PlayerInRange = true;
             }
@@ -114,5 +116,6 @@ public class GrdDialTrigger : MonoBehaviour
     {
         PlayerInRange = false;
         RobotInRange= false;
+        Destroy(gameObject);
     }
 }

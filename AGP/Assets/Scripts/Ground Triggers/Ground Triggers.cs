@@ -10,8 +10,6 @@ public class GroundTriggers : MonoBehaviour
     PlayerManager playerManager;
     public GameObject Player;
 
-    [Header("Area bools")]
-    public bool IsVents;
     private void Awake()
     {
         playerManager = Player.GetComponent<PlayerManager> ();

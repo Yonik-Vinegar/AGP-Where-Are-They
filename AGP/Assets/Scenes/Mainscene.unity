@@ -713,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 71482454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.028304692, z: -0, w: 0.9995994}
-  m_LocalPosition: {x: -13.93, y: -0.98, z: -25.6}
+  m_LocalPosition: {x: 14.8, y: -0.98, z: 7.38}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4045,7 +4045,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 5
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &244513282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5994,6 +5993,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2111334896}
     m_Modifications:
+    - target: {fileID: 3320824144682875257, guid: b4c1cee98e617ef47b974fe8f958597f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd68b726c31155d4da874827a4fe9089, type: 2}
     - target: {fileID: 3779990434448087418, guid: b4c1cee98e617ef47b974fe8f958597f,
         type: 3}
       propertyPath: m_Name
@@ -7833,7 +7837,6 @@ MonoBehaviour:
   HeartBeatInc: 5
   HeartBeatDec: 0
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &477452004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13115,7 +13118,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 5
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &518846241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21246,7 +21248,6 @@ Transform:
   - {fileID: 1132180130}
   - {fileID: 294683045}
   - {fileID: 1305509162}
-  - {fileID: 1817909755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779423217
@@ -21828,7 +21829,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 5
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &814910782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27902,7 +27902,6 @@ MonoBehaviour:
   HeartBeatInc: 35
   HeartBeatDec: 0
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &984828592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28456,7 +28455,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 20
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &1054372465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28893,7 +28891,6 @@ MonoBehaviour:
   HeartBeatInc: 25
   HeartBeatDec: 0
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!1 &1097259731
 GameObject:
   m_ObjectHideFlags: 0
@@ -29402,7 +29399,7 @@ Transform:
   m_GameObject: {fileID: 1132180129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.82, y: -2.65, z: 0}
+  m_LocalPosition: {x: -5.25, y: -2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30033,7 +30030,7 @@ Transform:
   m_GameObject: {fileID: 1188799922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.6, y: -3.72, z: -44.26}
+  m_LocalPosition: {x: -10.81, y: -3.72, z: -44.26}
   m_LocalScale: {x: 3.9640274, y: 1.4961226, z: 6.005345}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30055,7 +30052,6 @@ MonoBehaviour:
   HeartBeatInc: 25
   HeartBeatDec: 0
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &1188799925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30076,7 +30072,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 1
-  CorridorAnimation: 0
+  CorridorAnimation: 1
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   SFXObject: {fileID: 1338914643}
@@ -30116,7 +30112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPosition: {fileID: 1132180129}
   Camera: {fileID: 1712492297}
-  target: {fileID: 1804824133}
+  target: {fileID: 294683045}
   Player: {fileID: 421576564}
   IsforRobot: 0
 --- !u!1 &1191511191
@@ -30169,7 +30165,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 0
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &1191511194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31252,7 +31247,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 15
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &1283757528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31622,7 +31616,7 @@ Transform:
   m_GameObject: {fileID: 1305509161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.52, y: -2.25, z: -0.28}
+  m_LocalPosition: {x: -2.16, y: -2.25, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31684,7 +31678,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 682a285fb263cbd4da15257341eee160, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
-  CorridorAnimation: 1
+  CorridorAnimation: 0
   FinalRobotCorridorTrigger: 1
   Robot: {fileID: 1804824132}
   SFXObject: {fileID: 1338914643}
@@ -37409,7 +37403,7 @@ Transform:
   m_GameObject: {fileID: 1712492296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16418724, y: 0.6278316, z: -0.13775937, w: -0.74825966}
-  m_LocalPosition: {x: -879.6377, y: -527.37256, z: -8.36389}
+  m_LocalPosition: {x: -850.9077, y: -527.37256, z: 24.616112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38927,7 +38921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804824132}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.78926253, z: -0, w: 0.61405593}
   m_LocalPosition: {x: -863.31, y: -528.04553, z: -7.95}
   m_LocalScale: {x: 1.5857848, y: 1.5857848, z: 1.5857848}
   m_ConstrainProportionsScale: 0
@@ -38935,7 +38929,7 @@ Transform:
   - {fileID: 2111334896}
   - {fileID: 1662949433}
   m_Father: {fileID: 375324950}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 104.233, z: 0}
 --- !u!4 &1804994478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5234289405533202386, guid: 205b85ab58f3c734691294378f086688,
@@ -39078,100 +39072,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1675420650}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1817909754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1817909755}
-  - component: {fileID: 1817909758}
-  - component: {fileID: 1817909757}
-  - component: {fileID: 1817909756}
-  m_Layer: 0
-  m_Name: Robot Trigger (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1817909755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817909754}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.38, y: -2.25, z: -0.28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 764902596}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1817909756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817909754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8fc32c5dbb788428c4a984e44ead9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 421576564}
-  grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
-  SFX: {fileID: 0}
-  ToggleInputs: 0
-  CorridorAnimation: 1
-  FinalRobotCorridorTrigger: 0
-  Robot: {fileID: 1804824132}
-  SFXObject: {fileID: 1338914643}
-  inkJSON: {fileID: 4900000, guid: 679e21611f18407449fc7fdf0c09c80c, type: 3}
---- !u!65 &1817909757
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817909754}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.9182081, y: 1.420894, z: 6.7381134}
-  m_Center: {x: -0.052662373, y: -0.07093471, z: -0.29686356}
---- !u!114 &1817909758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817909754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0254d9dcf6b6bb419ac6344266486cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPosition: {fileID: 0}
-  Camera: {fileID: 0}
-  target: {fileID: 0}
-  Player: {fileID: 0}
-  IsforRobot: 1
 --- !u!1 &1831357312
 GameObject:
   m_ObjectHideFlags: 0
@@ -40843,7 +40743,6 @@ MonoBehaviour:
   HeartBeatInc: 0
   HeartBeatDec: 5
   Player: {fileID: 421576564}
-  IsVents: 0
 --- !u!114 &1991179814
 MonoBehaviour:
   m_ObjectHideFlags: 0
