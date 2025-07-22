@@ -34,11 +34,10 @@ public class PlayerManager : MonoBehaviour
     public GameObject HeartRateDanger;
     [Header("HeartBeat SFX")]
     private AudioSource audioSource;
-    public GameObject SFXObject;
-    [SerializeField] private AudioClip FineHeartbeat;
-    [SerializeField] private AudioClip CautionHeartbeat;
-    [SerializeField] private AudioClip DangerHeartbeat;
-    [SerializeField] private AudioClip Flatline;
+    public GameObject FineHeartObject;
+    public GameObject CautionHeartObject;
+    public GameObject DangerHeartObject;
+    public GameObject FlatlineObject;
     private bool FineHeart = false;
     private bool CautionHeart = false; 
     private bool DangerHeart = false;   
@@ -55,10 +54,9 @@ public class PlayerManager : MonoBehaviour
         pov.m_HorizontalAxis.m_MaxSpeed = 100;
         pov.m_VerticalAxis.m_MaxSpeed = 100;
 
-        HeartRateCaution.SetActive(false);
-        HeartRateDanger.SetActive(false);
+        HeartRateCaution.SetActive(false); HeartRateDanger.SetActive(false);
+        CautionHeartObject.SetActive(false); DangerHeartObject.SetActive(false); FlatlineObject.SetActive(false);
 
-        audioSource = SFXObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -69,7 +67,14 @@ public class PlayerManager : MonoBehaviour
         if (HeartBeat >= 120f)
         {
             PlayerDead = true;
+            FlatlineObject.SetActive(true);
             console.EndGame();
+            HeartRateFine.SetActive(false);
+            HeartRateCaution.SetActive(false);
+            HeartRateDanger.SetActive(false);
+            DangerHeartObject.SetActive(false);
+            CautionHeartObject.SetActive(false);
+            FineHeartObject.SetActive(false);
         }
         else { PlayerDead = false; }
         if (HeartBeat <= 80f)
@@ -82,7 +87,9 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(true);
             HeartRateCaution.SetActive(false);
             HeartRateDanger.SetActive(false);
-            audioSource.PlayOneShot(FineHeartbeat);
+            DangerHeartObject.SetActive(false);
+            CautionHeartObject.SetActive(false);
+            FineHeartObject.SetActive(true);
             FineHeart = true;
             CautionHeart = false;
             DangerHeart = false;
@@ -93,7 +100,9 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(true);
             HeartRateDanger.SetActive(false );
-            audioSource.PlayOneShot(CautionHeartbeat);
+            DangerHeartObject.SetActive(false);
+            CautionHeartObject.SetActive(true);
+            FineHeartObject.SetActive(false);
             CautionHeart = true;
             FineHeart = false;
             DangerHeart = false;
@@ -104,7 +113,9 @@ public class PlayerManager : MonoBehaviour
             HeartRateFine.SetActive(false);
             HeartRateCaution.SetActive(false);
             HeartRateDanger .SetActive(true);
-            audioSource.PlayOneShot(DangerHeartbeat);
+            DangerHeartObject.SetActive(true);
+            CautionHeartObject.SetActive(false);
+            FineHeartObject.SetActive(false);
             DangerHeart = true;
             FineHeart = false;
             CautionHeart = false;

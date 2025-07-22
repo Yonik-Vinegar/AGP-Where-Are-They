@@ -16,6 +16,7 @@ public class GrdDialTrigger : MonoBehaviour
     public bool FinalRobotCorridorTrigger;
     public GameObject Robot;
     PlayerLocomation playerLocomation;
+    public bool FirstTrigger;
 
     private AudioSource SFXaudioSource;
     public GameObject SFXObject;
@@ -43,8 +44,11 @@ public class GrdDialTrigger : MonoBehaviour
                             DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                             Debug.Log("DialogueTriggered");
                             Destroy(gameObject);
+                            if (FirstTrigger == true)
+                            {
+                                 SFXaudioSource.PlayOneShot(SFX);
+                            }
 
-                            SFXaudioSource.PlayOneShot(SFX);
                         }
                     }
 
