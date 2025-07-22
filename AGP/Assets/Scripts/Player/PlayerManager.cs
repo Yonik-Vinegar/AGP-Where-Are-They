@@ -126,14 +126,5 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void HandleSensitivity()
-    {
-        if (LockInputs == false)
-        {
-            //pov.m_HorizontalAxis.m_MaxSpeed = pov.m_HorizontalAxis.m_MaxSpeed * pauseCameraValue;
-            //pov.m_VerticalAxis.m_MaxSpeed = pov.m_VerticalAxis.m_MaxSpeed * pauseCameraValue;
-            //Have the senstivity slider be its own variable, then have the Sensitivity in this script = it, unless it's being locked, that changed via an if statement.
-        }
-    }
 
 }   
