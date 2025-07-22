@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour
     {
         currentStory = new Story(UnsolvedJSON.text);
         dialogueIsPlaying = true;
+        interaction.ContinueCue.SetActive(true);
         dialoguePanel.SetActive(true);
         LoadAudioVariables(newDialogueClips);
         ContinueStory();
@@ -110,6 +111,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        interaction.ContinueCue.SetActive(false);
         playerManager.LockInputs = false;
         RobotAnimation = false;
         audioPlaying = false;

@@ -6,6 +6,7 @@ public class GrdDialTrigger : MonoBehaviour
 {
     //Code is a modified script from https://www.youtube.com/watch?v=vY0Sk93YUhA&list=PLkz5NgoW6xcWtxugVBcK58aIHpxyjjCSE&index=3
     PlayerManager playerManager;
+    Interaction interaction;
     private bool PlayerInRange;
     private bool RobotInRange;
     public GameObject Player;
@@ -31,6 +32,7 @@ public class GrdDialTrigger : MonoBehaviour
         playerManager = Player.GetComponent<PlayerManager>();
         SFXaudioSource = SFXObject.GetComponent<AudioSource>();
         playerLocomation = Player.GetComponent<PlayerLocomation>();
+        interaction = Player.GetComponent<Interaction>();
     }
 
     private void Update()
@@ -44,6 +46,7 @@ public class GrdDialTrigger : MonoBehaviour
                             DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
                             Debug.Log("DialogueTriggered");
                             Destroy(gameObject);
+                            interaction.ContinueCue.SetActive(true);
                             if (FirstTrigger == true)
                             {
                                  SFXaudioSource.PlayOneShot(SFX);
@@ -56,9 +59,10 @@ public class GrdDialTrigger : MonoBehaviour
                     {
                         if (RobotInRange == true && playerManager.PlayerDead == false)
                         {
-                        DialogueManager.GetInstance().EnterCorridorDialogueMode(inkJSON, grdDialogueAudioClips);
-                        Debug.Log("DialogueTriggered");
-                        Destroy(gameObject);
+                         DialogueManager.GetInstance().EnterCorridorDialogueMode(inkJSON, grdDialogueAudioClips);
+                         Debug.Log("DialogueTriggered");
+                         Destroy(gameObject);
+                         interaction.ContinueCue.SetActive(true);
 
                         }
                     }
