@@ -41,6 +41,7 @@ public class CorridorAnimation : MonoBehaviour
         Debug.Log("Is corridor Anim being called?");
         //Player.transform.position = PlayerPosition.transform.position;
         RenderSettings.fogColor = Color.black;
+        RenderSettings.fogDensity = 0.3f;
         Camera.LookAt = target;
     }
                                 
@@ -48,6 +49,7 @@ public class CorridorAnimation : MonoBehaviour
     {
         Debug.Log("Noncorridor");
         RenderSettings.fogColor = asda;
+        RenderSettings.fogDensity = 0.1f;
         Camera.LookAt = null;
     }
 }
