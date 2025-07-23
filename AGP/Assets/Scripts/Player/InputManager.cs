@@ -31,10 +31,15 @@ public class InputManager : MonoBehaviour
     public AudioSource audioSource;
     private bool MovementPerformed;
 
+    [Header("Tutorial things")]
+    public GameObject Tutorial1;
+    private float LocomotionPerformed = 0;
+
     private void Start()
     {
         consoleScript = FinalConsole.GetComponent<Console>();
         pauseMenu = GameManager.GetComponent<PauseMenu> ();
+        Tutorial1.SetActive (true);
     }
 
     private void OnEnable()
@@ -73,17 +78,23 @@ public class InputManager : MonoBehaviour
         if (movementInput.x > 0 ||  movementInput.y > 0 || movementInput.x < 0 || movementInput.y < 0)
         {
             MovementPerformed = true;
+            LocomotionPerformed++;
         }
         else
         {
             MovementPerformed = false;
-
         }
 
     }
 
     public void Update()
     {
+        if (MovementPerformed == true && LocomotionPerformed >= 1)
+        {
+            Tutorial1.SetActive(false);
+        }
+
+
         if (consoleScript.GameActive == true )
         {
             HandleIFStatements();

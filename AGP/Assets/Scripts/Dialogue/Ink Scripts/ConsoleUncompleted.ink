@@ -1,0 +1,1 @@
+Console interaction malfunction. console requires FLOW of power.
