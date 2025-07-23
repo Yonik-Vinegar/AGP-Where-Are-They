@@ -654,8 +654,8 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: 0e49f0f806892674f9121499a5b60806, type: 3}
-  - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
+  - {fileID: 8300000, guid: e00496a9320319c4b80bb2fbb807c746, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -1801,8 +1801,8 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: 8687a2e0e6be1cd469226de8a7ff8dd3, type: 3}
-  - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
+  - {fileID: 8300000, guid: e93731c621802714191f2d135689007c, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -2706,12 +2706,12 @@ PrefabInstance:
         type: 3}
       propertyPath: grdDialogueAudioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 53fb4c550bde66349bf774062059c2ce, type: 3}
+      objectReference: {fileID: 8300000, guid: f1d3828c22c48eb41b0c502c318b4cd1, type: 3}
     - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
         type: 3}
       propertyPath: grdDialogueAudioClips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: dd743ce33c0027045a8f19fa946ef4f9, type: 3}
+      objectReference: {fileID: 8300000, guid: b133261f052db634d8501c15e6b442eb, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3924,7 +3924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 71db5fc08b9e4c442b71e740df4293ce, type: 3}
+  - {fileID: 8300000, guid: 743fdebe1f438044ab083da6e833ccef, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -8031,10 +8031,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: a3f7561370e121441ab98c24e3fb4cb6, type: 3}
-  - {fileID: 8300000, guid: 0571744c0868b314fa65d272b36c02b2, type: 3}
+  - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
+  - {fileID: 8300000, guid: 563987bc7a5ea80499e8c93e27933b22, type: 3}
   - {fileID: 8300000, guid: cb0258dd363a99447aeead7a068c32a1, type: 3}
-  - {fileID: 8300000, guid: 25f7a6f83b4ef684dbc5f23146ea4b87, type: 3}
+  - {fileID: 8300000, guid: d764ef4c676f4ed4485ecf0a12c1e6af, type: 3}
   - {fileID: 8300000, guid: d36985c1ab59f4a439f3077e47237b8f, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
@@ -8043,7 +8043,7 @@ MonoBehaviour:
   Robot: {fileID: 0}
   FirstTrigger: 0
   SFXObject: {fileID: 1338914643}
-  inkJSON: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
+  inkJSON: {fileID: 4900000, guid: 2d0786e4d9be3a2409734f8ced2731b6, type: 3}
 --- !u!65 &477452005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13277,7 +13277,7 @@ Transform:
   m_GameObject: {fileID: 518846238}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.87, y: -2.7, z: -33.2}
+  m_LocalPosition: {x: -20.87, y: -2.7, z: -33.96}
   m_LocalScale: {x: 7.769916, y: 2.125144, z: 4.204762}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13313,14 +13313,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 4bac95b6dbfbc9a45a9fec4be9201f4f, type: 3}
-  - {fileID: 8300000, guid: 37cb376bedb9b6c41bd5c524c194258e, type: 3}
-  - {fileID: 8300000, guid: f3d687ed4e5cf124d86e6bb941da11f0, type: 3}
-  - {fileID: 8300000, guid: 3a8912de07cc6e548abf6d1c9cbf5c5f, type: 3}
-  - {fileID: 8300000, guid: 0d8a94a7ae4fd194aa2487622be20a3b, type: 3}
-  - {fileID: 8300000, guid: 58b62b62267026749bd6052291d54967, type: 3}
-  - {fileID: 8300000, guid: 4746c0e31c6359346915decf656325a8, type: 3}
-  - {fileID: 8300000, guid: 057bb64b518dc534caa99a64d53c5536, type: 3}
+  - {fileID: 8300000, guid: c97e6495d2694334f8916402b7d2c6ab, type: 3}
+  - {fileID: 8300000, guid: a63c75a4a2858bd43bf0401cd6d8bc28, type: 3}
+  - {fileID: 8300000, guid: 3d3f270d35301fe419a5cd8d18284d9c, type: 3}
+  - {fileID: 8300000, guid: fe8f84cb002c74c428a4da54433634b9, type: 3}
+  - {fileID: 8300000, guid: 65a83b89e8a0ffb479612e415dd3e62f, type: 3}
+  - {fileID: 8300000, guid: 05d9a64ce2b2d0648a5a36d8611a71b3, type: 3}
+  - {fileID: 8300000, guid: 3c2776760fbe1b64da9bddebf8a5a8a9, type: 3}
+  - {fileID: 8300000, guid: 8888e39ebc8e72e469befb3811563808, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -13452,11 +13452,11 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
-  - {fileID: 8300000, guid: 1e874fb6fb2353b4d82ef1e4e6b6b0d7, type: 3}
-  - {fileID: 8300000, guid: 231c6d92e8547944c8c35bdca56b0555, type: 3}
-  - {fileID: 8300000, guid: 9bcacfcf6875364448b4a68c3238632e, type: 3}
-  - {fileID: 8300000, guid: d7847b89c63f8ca4c898e2721a99ce00, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
+  - {fileID: 8300000, guid: b7a21c73cdd803043ad2bad2f259e66a, type: 3}
+  - {fileID: 8300000, guid: 24f3317563be63e45a284aec9022024a, type: 3}
+  - {fileID: 8300000, guid: d4e09236a0499a0478d0f08a1f14c31c, type: 3}
+  - {fileID: 8300000, guid: 79eea5e785c8eb740a7a1a11f8dd9cfa, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -18772,10 +18772,10 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: 677c0b1e498b91c42a5656cf98af1bae, type: 3}
-  - {fileID: 8300000, guid: bc5a5819ad3bf794ebecd503d95d1f82, type: 3}
+  - {fileID: 8300000, guid: d07c7031de8cc7b4fb306c5fdfc2b89d, type: 3}
+  - {fileID: 8300000, guid: 47dfadc658bd49641855948ebd2309a3, type: 3}
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: 737bb97926ef4df488a9dee39ac022a9, type: 3}
+  - {fileID: 8300000, guid: 0bdf566d4cd4b11409249269ddd20365, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -21534,9 +21534,10 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
-  - {fileID: 8300000, guid: 60cdce3f2ff1b58458a0aaa3de981961, type: 3}
-  - {fileID: 8300000, guid: 2b8d5415c36baf9459aa4ce517d557cf, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
+  - {fileID: 8300000, guid: 4c77203786867e1449aacac46d10ce50, type: 3}
+  - {fileID: 8300000, guid: 3e8a9b0b5d3d01a4fa8d6966195025d3, type: 3}
+  - {fileID: 8300000, guid: 0401b42053d0283429565f1cf66ab066, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -21911,8 +21912,8 @@ Transform:
   m_GameObject: {fileID: 814910779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.31, y: -2.933, z: -53.24}
-  m_LocalScale: {x: 9.082416, y: 1.0624228, z: 9.200698}
+  m_LocalPosition: {x: 44.31, y: -2.933, z: -37.91}
+  m_LocalScale: {x: 3.1901078, y: 1.0624228, z: 9.200698}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 92360016}
@@ -21931,9 +21932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 3cff43fd514b75d4cba29aab10231837, type: 3}
-  - {fileID: 8300000, guid: 73f36299dd85cab49a92e4a2d579f9dd, type: 3}
-  - {fileID: 8300000, guid: 136ec75332386d349b3c18b2bdde37d6, type: 3}
+  - {fileID: 8300000, guid: e9242ca2e4dd0e5499a2ed255ae07b64, type: 3}
+  - {fileID: 8300000, guid: 9bada1ffd7ad7b74182c76e26965b2d5, type: 3}
+  - {fileID: 8300000, guid: 114c53509667ef0479b58b71e20e3105, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -22518,11 +22519,10 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: a7b60b0a4820709468b5d285589cfa6c, type: 3}
-  - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
+  - {fileID: 8300000, guid: 0c0cedbfcd581d944b32285205ed342a, type: 3}
   - {fileID: 8300000, guid: 1e581addc9cd92a45b2cb41437b7e5b0, type: 3}
-  - {fileID: 8300000, guid: cbc5d94362258574695db5066ff08ffb, type: 3}
-  - {fileID: 8300000, guid: f8287fefde1ffec419a26e03f2800311, type: 3}
+  - {fileID: 8300000, guid: 64d6f976684e09747b1b212f86f00e20, type: 3}
+  - {fileID: 8300000, guid: 0b3287119767e7646a557b7e8b31c34d, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -28134,11 +28134,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 723e61130924c1f4aad0683791e7951e, type: 3}
-  - {fileID: 8300000, guid: c72b8e993d1b7e4449270ddde392a695, type: 3}
-  - {fileID: 8300000, guid: 10565b9a150143247bd709674945e7f4, type: 3}
-  - {fileID: 8300000, guid: 5bda729734e9300428ba5ec8481b2e24, type: 3}
-  - {fileID: 8300000, guid: 958c05f2b7f234e428e7a94142d5fe36, type: 3}
+  - {fileID: 8300000, guid: ac0a25a5c3db3c94383d7223db27925b, type: 3}
+  - {fileID: 8300000, guid: 0338b4af92e44924aa37e180c431a257, type: 3}
+  - {fileID: 8300000, guid: e41346f6b64480c41b5a00086c32bc2f, type: 3}
+  - {fileID: 8300000, guid: f6246a38dc2197143be1019e351152ad, type: 3}
+  - {fileID: 8300000, guid: da899d83d6a847c4da9b80702b9a693d, type: 3}
+  - {fileID: 8300000, guid: 5693c3403c48f6f46a33cc88362ec2a2, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -28671,11 +28672,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: bf5f429801e7cf1439db637373d1a708, type: 3}
-  - {fileID: 8300000, guid: 6ca0625056591574487955ea8e6d97c9, type: 3}
-  - {fileID: 8300000, guid: bae85569be537f142a3209bd3f78bdba, type: 3}
-  - {fileID: 8300000, guid: 9905701fa27181a459a7c1f9eedad628, type: 3}
-  - {fileID: 8300000, guid: b23a9e4a73a7425499cdf7cd3821ad89, type: 3}
+  - {fileID: 8300000, guid: 3bd27d1101b36ba49878dd55603718dd, type: 3}
+  - {fileID: 8300000, guid: 4c742003fab90454b9674102b948b40d, type: 3}
+  - {fileID: 8300000, guid: 806520abb16b9384f9e21b5563688d62, type: 3}
+  - {fileID: 8300000, guid: d59f4f1eff712194f81a1488775c24e3, type: 3}
+  - {fileID: 8300000, guid: d85ac7ad15e4eb34f9d422baeab5b16a, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -28703,8 +28704,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.7617613}
+  m_Center: {x: 0, y: 0, z: 0.094443984}
 --- !u!1 &1062425907
 GameObject:
   m_ObjectHideFlags: 0
@@ -29052,11 +29053,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 2a4c6e0b0634fda42b8c005ee5b288ca, type: 3}
   - {fileID: 8300000, guid: 76422cb2f89fef34b950646ea9b8d2fe, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 75350694e2b7b094088be9c40c13ae07, type: 3}
   - {fileID: 8300000, guid: 9ce498e38c2d79d4bbbb4d263932f1f1, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 40c84e0b33e7a9f4ba67fa3d12562c77, type: 3}
   SFX: {fileID: 8300000, guid: b9e0e0c16d552d24bace6b99048928a0, type: 3}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -30272,10 +30273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: d9ab4291d409e2a4fbcbdf514b9b716c, type: 3}
-  - {fileID: 8300000, guid: 496937654670f684da12b485eda2419a, type: 3}
-  - {fileID: 8300000, guid: 4d248a3855300fe4c8b0ba24d90ed906, type: 3}
+  - {fileID: 8300000, guid: 81550d1d36d5f8f4aa7db897272b7045, type: 3}
+  - {fileID: 8300000, guid: 2f1b8ae3cc5640845896079be17a91e7, type: 3}
+  - {fileID: 8300000, guid: f3995043137315e4982c96a8a8540a32, type: 3}
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
+  - {fileID: 8300000, guid: a809277d8f89815459f6304a0087a3fd, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 1
   CorridorAnimation: 1
@@ -30369,15 +30371,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 1f882e4484cd77944b001a1cc2bda01f, type: 3}
-  - {fileID: 8300000, guid: 9fb21c72af399f9489500203e668ab1e, type: 3}
-  - {fileID: 8300000, guid: 602b2b6363ea66f498c1611f16c7b19f, type: 3}
+  - {fileID: 8300000, guid: a98417490981f834385e220430cb0ebe, type: 3}
+  - {fileID: 8300000, guid: 8f6fff7f5406da64ebd5d12e8760c4e9, type: 3}
+  - {fileID: 8300000, guid: 63b2875824790da43ba316afa2b04dcd, type: 3}
   - {fileID: 8300000, guid: 68e79e759eff2b24ca295e0b428ef41d, type: 3}
-  - {fileID: 8300000, guid: a116e991125ef4b449d1db24361047c1, type: 3}
+  - {fileID: 8300000, guid: 8c4a9fb6e607fcb408ac3baa0f4258a3, type: 3}
   - {fileID: 8300000, guid: 4471824ecbc1e614da29f19f33b4e129, type: 3}
-  - {fileID: 8300000, guid: e0990501715f74f45a78e6353425b92c, type: 3}
+  - {fileID: 8300000, guid: 90ba6e0ee2a00f8459326d73270b9e98, type: 3}
   - {fileID: 8300000, guid: 44775f0fa14ad8841b9d46b66e820ef1, type: 3}
-  - {fileID: 8300000, guid: 43b34c60fe9fc2d4b9089850636a58a9, type: 3}
+  - {fileID: 8300000, guid: 2f911d5e7a730544cbd7e26e1b662a66, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -31415,7 +31417,7 @@ Transform:
   m_GameObject: {fileID: 1283757525}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -2.933, z: -60.38}
+  m_LocalPosition: {x: -0.7, y: -3.57, z: -60.38}
   m_LocalScale: {x: 9.082416, y: 1.0624228, z: 2.9552643}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31435,10 +31437,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 765347add544c694da5841e05b1af501, type: 3}
-  - {fileID: 8300000, guid: eed389a5dea7b734086d52dcb9e29e5f, type: 3}
-  - {fileID: 8300000, guid: 650e6c86d5bc6ab46930c56b248006a9, type: 3}
-  - {fileID: 8300000, guid: 044b933a8ef76294287333656033b0c8, type: 3}
+  - {fileID: 8300000, guid: 5f117837177ebf64b858ba62c8b450d7, type: 3}
+  - {fileID: 8300000, guid: f53be86ae3643d447bdb86ccb3e447ce, type: 3}
+  - {fileID: 8300000, guid: ea2cdd94900781c41a73a6777bf7e688, type: 3}
+  - {fileID: 8300000, guid: 3ba7c14b672b53d4a9ad7d08abbe1153, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -31716,8 +31718,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 0910c9440b7bf384496ae6c9cfa747f2, type: 3}
-  - {fileID: 8300000, guid: 682a285fb263cbd4da15257341eee160, type: 3}
+  - {fileID: 8300000, guid: 9a1ab23a0f7ee324bb22afb80370e8cc, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
+  - {fileID: 8300000, guid: 98534c45866bdab4198816ccfe0627ba, type: 3}
   SFX: {fileID: 0}
   ToggleInputs: 0
   CorridorAnimation: 0
@@ -36627,11 +36630,12 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: 207f998207b778b4682ede6161bf94ae, type: 3}
   Player: {fileID: 421576564}
   grdDialogueAudioClips:
-  - {fileID: 8300000, guid: 65a9a6fb2c369eb4fb2784fc51ccd8d0, type: 3}
+  - {fileID: 8300000, guid: bc37884dbc9b4234094aa3e9e10bd1f7, type: 3}
   - {fileID: 8300000, guid: 157dea749375ebe4697e1c560eeadfec, type: 3}
-  - {fileID: 8300000, guid: beb3fe76e43e10d4b8e8b56682f367bd, type: 3}
-  - {fileID: 8300000, guid: 333c2faa4cbc8904db80f0b23a97a7f7, type: 3}
-  - {fileID: 8300000, guid: 08d6fecc8aada734db90e7f58f0afa4a, type: 3}
+  - {fileID: 8300000, guid: d78315bca0548bc42891d21d93cdbafc, type: 3}
+  - {fileID: 8300000, guid: 046665fdb6c2e44479f7b529b5a7de3f, type: 3}
+  - {fileID: 8300000, guid: 96cf0fc737066dd4892740c7f49053c3, type: 3}
+  - {fileID: 8300000, guid: 6e5fb98d639ebc04e94061dedd0d6c78, type: 3}
   DialogueInteractionTriggered: 0
   PuzzleInteractionTriggered: 0
   ContinueDialogueTriggered: 0
@@ -42865,6 +42869,41 @@ PrefabInstance:
       propertyPath: UnsolvedJSON
       value: 
       objectReference: {fileID: 4900000, guid: 0d057d4462c293345b9b50e7ee74c34e, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: UnsolvedAudioClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: UnsolvedAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 563987bc7a5ea80499e8c93e27933b22, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: UnsolvedAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2bbb1fb95d78ab845a643ff514cacaf3, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: UnsolvedAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d764ef4c676f4ed4485ecf0a12c1e6af, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: UnsolvedAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c0887ffdfe6339e458fa6a66ba6869ac, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: grdDialogueAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 682a285fb263cbd4da15257341eee160, type: 3}
+    - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
+        type: 3}
+      propertyPath: grdDialogueAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88df83c80d371d847a1bbe67e8b6f14f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
