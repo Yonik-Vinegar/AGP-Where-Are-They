@@ -15,8 +15,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject Player;
     public bool isPaused;
     public GameObject soundMenu;
+    public GameObject SoundControls;
     public Button soundButton;
     SoundController soundController;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -81,7 +83,8 @@ public class PauseMenu : MonoBehaviour
         soundMenu = FindObjectOfType<SoundController>().SoundMenu;
         soundMenu?.SetActive(true);
         PMenu.SetActive(false);
-        soundController = soundMenu.GetComponent<SoundController>();
+        SoundControls = FindObjectOfType<SoundController>().SoundManager;
+        soundController = SoundControls.GetComponent<SoundController>();
         soundController.IsGameScene = true;
     }
 }

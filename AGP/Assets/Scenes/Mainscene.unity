@@ -2819,7 +2819,7 @@ PrefabInstance:
         type: 3}
       propertyPath: grdDialogueAudioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: a98417490981f834385e220430cb0ebe, type: 3}
+      objectReference: {fileID: 8300000, guid: f1d3828c22c48eb41b0c502c318b4cd1, type: 3}
     - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
         type: 3}
       propertyPath: grdDialogueAudioClips.Array.data[1]

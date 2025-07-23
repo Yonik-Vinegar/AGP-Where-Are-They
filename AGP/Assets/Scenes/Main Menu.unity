@@ -4666,7 +4666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 0c111147384f5634bbc9aca1e4b96034, type: 2}
   SoundMenu: {fileID: 672868202}
-  PauseMenu: {fileID: 672868202}
+  PauseMenu: {fileID: 0}
+  SoundManager: {fileID: 1915651983}
   IsGameScene: 0
 --- !u!1 &1973188012
 GameObject:

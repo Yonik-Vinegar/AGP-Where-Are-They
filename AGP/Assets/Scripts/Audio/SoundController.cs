@@ -10,6 +10,7 @@ public class SoundController : MonoBehaviour
     public AudioMixer masterMixer;
     public GameObject SoundMenu;
     public GameObject PauseMenu;
+    public GameObject SoundManager;
     public bool IsGameScene;
 
     void Awake()
@@ -24,6 +25,7 @@ public class SoundController : MonoBehaviour
         if (IsGameScene == true)
         {
             PauseMenu = FindObjectOfType<PauseMenu>().PMenu;
+            Debug.Log("IsGameScene");
         }
         else
         {
