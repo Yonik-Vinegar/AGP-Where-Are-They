@@ -125,7 +125,7 @@ MonoBehaviour:
   BaseUI: {fileID: 0}
   GameActive: 1
   EndSFX: {fileID: 0}
-  SFX: {fileID: 0}
+  SFX: {fileID: 8300000, guid: 4fa9ed42e589d1d4a8bb865f82fea1ef, type: 3}
   SFXObject: {fileID: 0}
 --- !u!65 &7169043674487116366
 BoxCollider:

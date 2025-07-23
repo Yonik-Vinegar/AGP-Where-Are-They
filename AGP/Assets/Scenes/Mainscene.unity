@@ -7132,7 +7132,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8036279014369545056, guid: 0c111147384f5634bbc9aca1e4b96034,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e1cdffd1af5261d4cb6b58f79471528e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -13327,7 +13327,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: de306ba38be659a4e8ea392ee6bf33fc, type: 3}
 --- !u!65 &518846242
 BoxCollider:
@@ -21895,7 +21895,6 @@ GameObject:
   - component: {fileID: 814910780}
   - component: {fileID: 814910783}
   - component: {fileID: 814910782}
-  - component: {fileID: 814910781}
   m_Layer: 0
   m_Name: Trigger1 (2)
   m_TagString: GroundTrigger
@@ -21918,22 +21917,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 92360016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &814910781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814910779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadc1543b02b30f499d197d64c2d324c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventAnimator: {fileID: 0}
-  HeartBeatInc: 0
-  HeartBeatDec: 5
-  Player: {fileID: 421576564}
 --- !u!114 &814910782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21957,7 +21940,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: cd96defb8e39f8d428017355cdd6d5bb, type: 3}
 --- !u!65 &814910783
 BoxCollider:
@@ -28162,7 +28145,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: 206ec7bfa755a0b4d92d9d4547e2b456, type: 3}
 --- !u!65 &984828593
 BoxCollider:
@@ -28652,7 +28635,6 @@ GameObject:
   - component: {fileID: 1054372463}
   - component: {fileID: 1054372466}
   - component: {fileID: 1054372465}
-  - component: {fileID: 1054372464}
   m_Layer: 0
   m_Name: Trigger1 (1)
   m_TagString: GroundTrigger
@@ -28675,22 +28657,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 92360016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1054372464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054372462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadc1543b02b30f499d197d64c2d324c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventAnimator: {fileID: 0}
-  HeartBeatInc: 0
-  HeartBeatDec: 20
-  Player: {fileID: 421576564}
 --- !u!114 &1054372465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28716,7 +28682,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: ead53c73bb730584086b95d76ccabeb3, type: 3}
 --- !u!65 &1054372466
 BoxCollider:
@@ -29045,7 +29011,7 @@ Transform:
   m_GameObject: {fileID: 1096359428}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.78, y: -2.933, z: -13.85}
+  m_LocalPosition: {x: -1.78, y: -3.63, z: -13.85}
   m_LocalScale: {x: 2.3793397, y: 1.0624228, z: 3.002251}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30367,7 +30333,6 @@ GameObject:
   - component: {fileID: 1191511192}
   - component: {fileID: 1191511195}
   - component: {fileID: 1191511194}
-  - component: {fileID: 1191511193}
   m_Layer: 0
   m_Name: Airlock (5)
   m_TagString: GroundTrigger
@@ -30390,22 +30355,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 92360016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1191511193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191511191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadc1543b02b30f499d197d64c2d324c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventAnimator: {fileID: 0}
-  HeartBeatInc: 0
-  HeartBeatDec: 0
-  Player: {fileID: 421576564}
 --- !u!114 &1191511194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30435,7 +30384,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: 718c94757c18dd742bb9a142a0325913, type: 3}
 --- !u!65 &1191511195
 BoxCollider:
@@ -31450,7 +31399,6 @@ GameObject:
   - component: {fileID: 1283757526}
   - component: {fileID: 1283757529}
   - component: {fileID: 1283757528}
-  - component: {fileID: 1283757527}
   m_Layer: 0
   m_Name: Trigger1 (3)
   m_TagString: GroundTrigger
@@ -31473,22 +31421,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 92360016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1283757527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283757525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadc1543b02b30f499d197d64c2d324c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventAnimator: {fileID: 0}
-  HeartBeatInc: 0
-  HeartBeatDec: 15
-  Player: {fileID: 421576564}
 --- !u!114 &1283757528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31513,7 +31445,7 @@ MonoBehaviour:
   FinalRobotCorridorTrigger: 0
   Robot: {fileID: 0}
   FirstTrigger: 0
-  SFXObject: {fileID: 0}
+  SFXObject: {fileID: 1338914643}
   inkJSON: {fileID: 4900000, guid: aa9e4b2df07b9314d911e085cfdc57d5, type: 3}
 --- !u!65 &1283757529
 BoxCollider:
@@ -31766,7 +31698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPosition: {fileID: 0}
-  Camera: {fileID: 0}
+  Camera: {fileID: 1712492297}
   target: {fileID: 0}
   Player: {fileID: 0}
   IsforRobot: 1
@@ -39099,6 +39031,7 @@ GameObject:
   - component: {fileID: 1775844650}
   - component: {fileID: 1775844648}
   - component: {fileID: 1775844649}
+  - component: {fileID: 1775844651}
   m_Layer: 0
   m_Name: Doors 4 & 5
   m_TagString: Untagged
@@ -39241,6 +39174,18 @@ Transform:
   - {fileID: 503986695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775844651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775844647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50eaaa51b580ed4794c58efb6578551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1801681980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43637160679870249a55125e10eabf08,
