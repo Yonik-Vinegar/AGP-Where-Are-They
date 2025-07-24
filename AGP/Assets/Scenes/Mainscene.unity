@@ -713,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 71482454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.028304692, z: -0, w: 0.9995994}
-  m_LocalPosition: {x: 14.8, y: -0.98, z: 7.38}
+  m_LocalPosition: {x: 14.55, y: -0.98, z: 7.84}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4682,7 +4682,7 @@ PrefabInstance:
         type: 3}
       propertyPath: JunctionConnection
       value: 
-      objectReference: {fileID: 935294162}
+      objectReference: {fileID: 167278824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7003,6 +7003,11 @@ PrefabInstance:
       propertyPath: MeshRenderer
       value: 
       objectReference: {fileID: 1505923473}
+    - target: {fileID: 8664352743202309790, guid: 817c4a846dd2f7e4b876fc94d66f6770,
+        type: 3}
+      propertyPath: previousJunction
+      value: 
+      objectReference: {fileID: 4924633762934444341}
     m_RemovedComponents:
     - {fileID: 3016344178145337827, guid: 817c4a846dd2f7e4b876fc94d66f6770, type: 3}
     - {fileID: 98062557261022064, guid: 817c4a846dd2f7e4b876fc94d66f6770, type: 3}
@@ -19165,7 +19170,7 @@ PrefabInstance:
         type: 3}
       propertyPath: JunctionConnection
       value: 
-      objectReference: {fileID: 935294162}
+      objectReference: {fileID: 167278824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22215,7 +22220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -548266516938871514, guid: 0c111147384f5634bbc9aca1e4b96034,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b46ce184c696cc4ba13b4e3417d5153, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -22839,12 +22844,12 @@ PrefabInstance:
         type: 3}
       propertyPath: materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e61ffb61f9ce5d47b9c9060edcbc824, type: 2}
+      objectReference: {fileID: 2100000, guid: db09ecb6b25bb7048ac7fd7b55260e84, type: 2}
     - target: {fileID: 4713270523246057481, guid: a9aaeb008b43a764183a09db6fe62115,
         type: 3}
       propertyPath: materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 93342c0eb9f15d142ab581bb33709411, type: 2}
+      objectReference: {fileID: 2100000, guid: ba9e4da9a7395684487adab3fc668a5a, type: 2}
     - target: {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115,
         type: 3}
       propertyPath: Player
@@ -22890,7 +22895,8 @@ PrefabInstance:
       propertyPath: grdDialogueAudioClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: dd743ce33c0027045a8f19fa946ef4f9, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5144945626501489744, guid: a9aaeb008b43a764183a09db6fe62115, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -28258,7 +28264,7 @@ PrefabInstance:
         type: 3}
       propertyPath: JunctionConnection
       value: 
-      objectReference: {fileID: 935294162}
+      objectReference: {fileID: 167278824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29269,6 +29275,7 @@ MonoBehaviour:
   Player: {fileID: 421576564}
   isPaused: 0
   soundMenu: {fileID: 0}
+  SoundControls: {fileID: 0}
   soundButton: {fileID: 1639762484}
 --- !u!1 &1064762992
 GameObject:
@@ -30864,8 +30871,8 @@ Transform:
   m_GameObject: {fileID: 1191511191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.89, y: -2.933, z: -54.88}
-  m_LocalScale: {x: 8.443083, y: 2.125144, z: 6.005345}
+  m_LocalPosition: {x: -10.3, y: 16.468, z: -55.52}
+  m_LocalScale: {x: 8.443083, y: 48.408115, z: 6.005345}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 92360016}
@@ -35194,6 +35201,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 360533454}
   dialogueText: {fileID: 1224287103}
   Player: {fileID: 421576564}
+  FinalConsole: {fileID: 1874201469}
 --- !u!1001 &1516274657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35828,7 +35836,7 @@ PrefabInstance:
         type: 3}
       propertyPath: JunctionConnection
       value: 
-      objectReference: {fileID: 935294162}
+      objectReference: {fileID: 167278824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36704,7 +36712,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -548266516938871514, guid: 0c111147384f5634bbc9aca1e4b96034,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b46ce184c696cc4ba13b4e3417d5153, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -37267,7 +37275,7 @@ PrefabInstance:
         type: 3}
       propertyPath: JunctionConnection
       value: 
-      objectReference: {fileID: 935294162}
+      objectReference: {fileID: 167278824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38083,7 +38091,7 @@ Transform:
   m_GameObject: {fileID: 1712492296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16418724, y: 0.6278316, z: -0.13775937, w: -0.74825966}
-  m_LocalPosition: {x: -850.9077, y: -527.37256, z: 24.616112}
+  m_LocalPosition: {x: -851.1577, y: -527.37256, z: 25.07611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43999,6 +44007,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4924633762934444339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4924633762934444341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8664352743202309790, guid: 817c4a846dd2f7e4b876fc94d66f6770,
+    type: 3}
+  m_PrefabInstance: {fileID: 4924633762934444339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874830598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf43b6a4566d5144898ebba055221a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9084285403382813180
 PrefabInstance:
   m_ObjectHideFlags: 0

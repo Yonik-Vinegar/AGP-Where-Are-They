@@ -26,6 +26,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject Player;
     Interaction interaction;
 
+    [Header("Final Console")]
+    public GameObject FinalConsole;
+    Console console;
     private void Awake()
     {
         if (instance != null)
@@ -37,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         audioSource = Player.GetComponent<AudioSource>();
         interaction = Player.GetComponent<Interaction>();
         playerManager = Player.GetComponent<PlayerManager>();
+        console = FinalConsole.GetComponent<Console>();
     }
 
     public static DialogueManager GetInstance()
@@ -82,7 +86,9 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         LoadAudioVariables(newDialogueClips);
         ContinueStory();
-        
+        console.Dialogueplaying = true;
+
+
     }
 
     public void EnterConsoleDialogueMode(TextAsset UnsolvedJSON, AudioClip[] newDialogueClips)
@@ -115,6 +121,7 @@ public class DialogueManager : MonoBehaviour
         playerManager.LockInputs = false;
         RobotAnimation = false;
         audioPlaying = false;
+        console.Dialogueplaying = false;
 
     }
 

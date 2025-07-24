@@ -18,6 +18,7 @@ public class Console : MonoBehaviour
     public GameObject GameOverScreen;
     public GameObject BaseUI;
     public bool GameActive = true;
+    public bool Dialogueplaying;
 
     [Header("Sound Effects for all consoles")]
     [SerializeField] private AudioClip EndSFX;
@@ -68,7 +69,7 @@ public class Console : MonoBehaviour
 
     public void EndGame()
     {
-        if (EndingTrigger == true)
+        if (EndingTrigger == true && Dialogueplaying == false)
         {
             inputManager.lockCursor = false;
             inputManager.InteractionPerformed = false;
