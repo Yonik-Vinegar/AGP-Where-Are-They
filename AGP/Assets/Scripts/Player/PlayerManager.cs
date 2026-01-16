@@ -19,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     public CinemachineVirtualCamera camera;
     CinemachinePOV pov;
     int pauseCameraValue = 1;
-    int Sensitivity; 
     public bool LockInputs;
 
     [Header("HeartBeatSystem")]
@@ -51,9 +50,8 @@ public class PlayerManager : MonoBehaviour
         interaction = GetComponent<Interaction>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
         console = CheckConsole.GetComponent<Console>();
-        pov.m_HorizontalAxis.m_MaxSpeed = 100;
-        pov.m_VerticalAxis.m_MaxSpeed = 100;
-
+        pov.m_HorizontalAxis.m_MaxSpeed = .1f;
+        pov.m_VerticalAxis.m_MaxSpeed = .1f;
         HeartRateCaution.SetActive(false); HeartRateDanger.SetActive(false);
         CautionHeartObject.SetActive(false); DangerHeartObject.SetActive(false); FlatlineObject.SetActive(false);
 
@@ -120,22 +118,26 @@ public class PlayerManager : MonoBehaviour
             FineHeart = false;
             CautionHeart = false;
         }
+
+        HandleMouseMomentum();
+    }
+
+    private void HandleMouseMomentum()
+    {
+        LockInputs = inputManager.pauseMenu.isPaused;
+        Debug.Log(LockInputs);
+        if (LockInputs)
+        {
+        }
+        else
+        {
+        }
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(LockInputs);
-        if (LockInputs == false)
-        {
-            pov.m_HorizontalAxis.m_MaxSpeed = 100;
-            pov.m_VerticalAxis.m_MaxSpeed = 100;
-            playerLocomation.HandleAllMovement();
-        }
-        else if (LockInputs == true)
-        {
-            pov.m_HorizontalAxis.m_MaxSpeed = -1;
-            pov.m_VerticalAxis.m_MaxSpeed = -1;
-        }
+        playerLocomation.HandleAllMovement();
+        
     }
 
 

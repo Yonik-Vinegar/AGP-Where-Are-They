@@ -16,7 +16,6 @@ public class DialogueManager : MonoBehaviour
     private AudioSource audioSource;
 
     private bool RobotAnimation = false;
-    private bool audioPlaying = false;
 
     public bool dialogueIsPlaying { get; private set; }
     PlayerManager playerManager;
@@ -29,6 +28,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Final Console")]
     public GameObject FinalConsole;
     Console console;
+
+    private bool OnGroundDialogue;
+    
     private void Awake()
     {
         if (instance != null)
@@ -56,39 +58,38 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueIsPlaying)
+        if (dialogueIsPlaying)
         {
-            return;
+            CheckForDialogueLoad();
         }
+        
+    }
 
-        if (interaction.ContinueDialogueTriggered == true || interaction.GroundContinueDialogue)
+    private void CheckForDialogueLoad()
+    {
+        if (interaction.ContinueDialogueTriggered == true || interaction.GroundContinueDialogue || OnGroundDialogue && !audioSource.isPlaying)
         {
             ContinueStory();
         }
-        if (playerManager.PlayerDead == true)
+        if (playerManager.PlayerDead)
         {
             audioSource.mute = true;
         }
-        if(audioPlaying == true)
-        {
-            if (!audioSource.isPlaying) 
-            {
-                dialogueIndex++;
-            }
-
-        }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips)
+    public void EnterDialogueMode(TextAsset inkJSON, AudioClip[] newDialogueClips, bool GroundDialogue, bool triggerRobotAnimation)
     {
         currentStory =  new Story (inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         LoadAudioVariables(newDialogueClips);
+        if (GroundDialogue)
+        {
+            OnGroundDialogue = true;
+        }
         ContinueStory();
         console.Dialogueplaying = true;
-
-
+        RobotAnimation = triggerRobotAnimation;
     }
 
     public void EnterConsoleDialogueMode(TextAsset UnsolvedJSON, AudioClip[] newDialogueClips)
@@ -120,7 +121,6 @@ public class DialogueManager : MonoBehaviour
         interaction.ContinueCue.SetActive(false);
         playerManager.LockInputs = false;
         RobotAnimation = false;
-        audioPlaying = false;
         console.Dialogueplaying = false;
 
     }
@@ -131,40 +131,35 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
     }
 
+    private bool CheckIfGroundDialogue(bool isGroundDialogue)
+    {
+        if (isGroundDialogue)
+        {
+            if (audioSource.isPlaying || !currentStory.canContinue)
+            {
+                return false;
+            }
+            return true;
+        }
+        return currentStory.canContinue;
+    }
+    
     private void ContinueStory()
     {
-        if (RobotAnimation == false) 
+        bool canContinue = CheckIfGroundDialogue(OnGroundDialogue);
+        if (canContinue)
         {
-            if (currentStory.canContinue)
-            {
-                dialogueText.text = currentStory.Continue();
-                audioSource.Stop();
-                audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
-                dialogueIndex++;
-                Debug.Log("Does this work?");
-            }
-            else
-            {
-                ExitDialogueMode();
-
-            }
+            dialogueText.text = currentStory.Continue();
+            audioSource.Stop();
+            audioSource.clip = dialogueClips[dialogueIndex];
+            audioSource.Play();
+            dialogueIndex++;
+            Debug.Log("Does this work?");
         }
-
-        if (RobotAnimation == true)
+        else
         {
-            if (currentStory.canContinue)
-            {
-                dialogueText.text = currentStory.Continue();
-                audioSource.Stop();
-                audioSource.PlayOneShot(dialogueClips[dialogueIndex]);
-                dialogueIndex++;
-                audioPlaying = true;
-            }
-            else
-            {
-                ExitDialogueMode();
-
-            }
+            OnGroundDialogue = false;
+            ExitDialogueMode();
         }
     }
 }

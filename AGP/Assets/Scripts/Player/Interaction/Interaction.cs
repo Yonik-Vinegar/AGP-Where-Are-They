@@ -82,10 +82,11 @@ public class Interaction : MonoBehaviour
             Interactable = null;
         }
 
+        //GroundContinueDialogue = true;
+
         if (inputManager.ContinuePressed == true)
         {
             GroundContinueDialogue = true;
-
         }
         else { GroundContinueDialogue = false; }
 

@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
     public GameObject FinalConsole;
     Console consoleScript;
     public GameObject GameManager;
-    PauseMenu pauseMenu;
+    public PauseMenu pauseMenu;
 
     public AudioSource audioSource;
     private bool MovementPerformed;
@@ -35,11 +35,14 @@ public class InputManager : MonoBehaviour
     public GameObject Tutorial1;
     private float LocomotionPerformed = 0;
 
+    private PlayerManager playerManager;
+
     private void Start()
     {
         consoleScript = FinalConsole.GetComponent<Console>();
         pauseMenu = GameManager.GetComponent<PauseMenu> ();
         Tutorial1.SetActive (true);
+        playerManager = gameObject.GetComponent<PlayerManager> ();
     }
 
     private void OnEnable()
@@ -144,16 +147,14 @@ public class InputManager : MonoBehaviour
                 ContinuePressed = false;
             }
         }
-        if (PausePerformed == true)
-        {
-            PausePressed = true;
-            PausePerformed = false;
-        }
-        else
-        {
-            PausePressed = false;
-        }
+        Pause();
     }
 
+
+    private void Pause()
+    {
+        PausePressed = PausePerformed;
+        PausePerformed = false;
+    }
 
 }

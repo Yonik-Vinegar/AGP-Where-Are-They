@@ -39,11 +39,11 @@ public class GrdDialTrigger : MonoBehaviour
     {
                 if (!DialogueManager.GetInstance().dialogueIsPlaying)
                 {
-                    if (CorridorAnimation == false)
+                    if (!CorridorAnimation)
                     {
-                        if (PlayerInRange == true && playerManager.PlayerDead == false)
+                        if (PlayerInRange&& !playerManager.PlayerDead)
                         {
-                            DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
+                            DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips, true, false);
                             Debug.Log("DialogueTriggered");
                             Destroy(gameObject);
                             interaction.ContinueCue.SetActive(true);
@@ -54,16 +54,14 @@ public class GrdDialTrigger : MonoBehaviour
 
                         }
                     }
-
-                    if (CorridorAnimation == true)
+                    else
                     {
-                        if (RobotInRange == true && playerManager.PlayerDead == false)
+                        if (RobotInRange&& !playerManager.PlayerDead)
                         {
-                         DialogueManager.GetInstance().EnterCorridorDialogueMode(inkJSON, grdDialogueAudioClips);
+                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips, true, true);
                          Debug.Log("DialogueTriggered");
                          Destroy(gameObject);
                          interaction.ContinueCue.SetActive(true);
-
                         }
                     }
                 }

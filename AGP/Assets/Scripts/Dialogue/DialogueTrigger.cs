@@ -49,14 +49,14 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (DialogueInteractionTriggered == true && isConsole == false)
             {
-                DialogueManager.GetInstance().EnterDialogueMode( inkJSON, grdDialogueAudioClips);
+                DialogueManager.GetInstance().EnterDialogueMode( inkJSON, grdDialogueAudioClips, false, false);
                 Debug.Log("DialogueTriggered");
             }
             else if (DialogueInteractionTriggered == true && isConsole == true) 
             {
                 if (HasbeenSolved == true)
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, grdDialogueAudioClips, false, false);
                     Debug.Log("DialogueTriggered");
                 }
                 else  
