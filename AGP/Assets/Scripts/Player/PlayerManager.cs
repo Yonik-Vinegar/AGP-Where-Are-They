@@ -39,7 +39,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject FlatlineObject;
     private bool FineHeart = false;
     private bool CautionHeart = false; 
-    private bool DangerHeart = false;   
+    private bool DangerHeart = false;
+    private float CameraSpeed;
 
     // Start is called before the first frame update
     private void Awake()
@@ -132,6 +133,7 @@ public class PlayerManager : MonoBehaviour
         else
         {
         }
+        CameraSpeed = pov.m_HorizontalAxis.m_MaxSpeed * pov.m_VerticalAxis.m_MaxSpeed * Time.deltaTime;
     }
 
     private void FixedUpdate()
