@@ -51,8 +51,8 @@ public class PlayerManager : MonoBehaviour
         interaction = GetComponent<Interaction>();
         dialogueManager = DialogueManager.GetComponent<DialogueManager>();
         console = CheckConsole.GetComponent<Console>();
-        pov.m_HorizontalAxis.m_MaxSpeed = .1f;
-        pov.m_VerticalAxis.m_MaxSpeed = .1f;
+        //pov.m_HorizontalAxis.m_MaxSpeed = .1f;
+        //pov.m_VerticalAxis.m_MaxSpeed = .1f;
         HeartRateCaution.SetActive(false); HeartRateDanger.SetActive(false);
         CautionHeartObject.SetActive(false); DangerHeartObject.SetActive(false); FlatlineObject.SetActive(false);
 
@@ -62,7 +62,7 @@ public class PlayerManager : MonoBehaviour
     {
         HeartBeat -= DecreasePerSecond * Time.deltaTime;
         inputManager.HandleAllInputs();
-        HeartRateText.text = "Heart Rate: "+ Mathf.RoundToInt(HeartBeat);
+        HeartRateText.text =             "Heart Rate: "+ Mathf.RoundToInt(HeartBeat);
         if (HeartBeat >= 120f)
         {
             PlayerDead = true;
@@ -133,8 +133,18 @@ public class PlayerManager : MonoBehaviour
         else
         {
         }
-        CameraSpeed = pov.m_HorizontalAxis.m_MaxSpeed * pov.m_VerticalAxis.m_MaxSpeed * Time.deltaTime;
-    }
+        //CameraSpeed = pov.m_HorizontalAxis.m_MaxSpeed * pov.m_VerticalAxis.m_MaxSpeed * Time.deltaTime;
+        var currentRot = camera.transform.rotation.eulerAngles;
+        var rot = new Vector3(currentRot.x -= inputManager.cameraInputY/20 * SoundController.instance.Sensitivity, (currentRot.y+=inputManager.cameraInputX/20 * SoundController.instance.Sensitivity), 0);
+        Debug.Log(rot);
+        if (rot.x > 180)
+        {
+            rot.x -= 360;
+        }
+        rot.x = Mathf.Clamp(rot.x, -80, 80);
+        
+        camera.transform.rotation = Quaternion.Euler(rot);
+        }
 
     private void FixedUpdate()
     {

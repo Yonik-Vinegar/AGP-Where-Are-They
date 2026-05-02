@@ -77,6 +77,8 @@ public class InputManager : MonoBehaviour
 
         cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
+        cameraInput.x = 0;
+        cameraInput.y = 0;
 
         if (movementInput.x > 0 ||  movementInput.y > 0 || movementInput.x < 0 || movementInput.y < 0)
         {
@@ -92,6 +94,7 @@ public class InputManager : MonoBehaviour
 
     public void Update()
     {
+        
         if (MovementPerformed == true && LocomotionPerformed >= 1)
         {
             Tutorial1.SetActive(false);

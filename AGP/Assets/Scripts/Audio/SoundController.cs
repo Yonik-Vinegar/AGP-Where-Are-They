@@ -13,13 +13,33 @@ public class SoundController : MonoBehaviour
     public GameObject SoundManager;
     public bool IsGameScene;
 
+
+    public float Sensitivity = 1f;
+    public Slider SensSlider;
+
+    public static SoundController instance;
+
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
         DontDestroyOnLoad (this.gameObject);
         DontDestroyOnLoad(SoundMenu);
         SoundMenu.SetActive(false);
+        CallSens();
     }
 
+    public void CallSens()
+    {
+        Sensitivity = PlayerPrefs.GetFloat("Sensitivity", 1f);
+        SensSlider.value = Sensitivity;
+    }
     public void Update()
     {
         if (IsGameScene == true)
@@ -66,5 +86,15 @@ public class SoundController : MonoBehaviour
 
         SoundMenu?.SetActive(true);
     }
+
+
+    public void AdjustSensitivity(float value)
+    {
+        Sensitivity = value;
+        PlayerPrefs.SetFloat("Sensitivity", Sensitivity);
+    }
+
+
+
 
 }
